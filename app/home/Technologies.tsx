@@ -100,14 +100,6 @@ const technologies: TechnologiesType = {
       height: 60
     }
   ]
-//   'Digital Marketing': [
-//     { 
-//       name: 'SEO', 
-//       logo: '/seo-logo.png',
-//       width: 60,
-//       height: 60
-//     }
-//   ]
 };
 
 export default function Technologies() {
@@ -117,34 +109,56 @@ export default function Technologies() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-12">
-          <motion.h2 
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+          <motion.div 
+            className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
+            style={{ backgroundColor: '#CE000040', color: '#CE0000' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Technologies We Use <span className="text-blue-600"></span>
+            Our Technologies
+          </motion.div>
+
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            Technologies We <span style={{ color: '#CE0000' }}>Use</span>
           </motion.h2>
+
+          <motion.p 
+            className="text-lg text-gray-600 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            We leverage cutting-edge technologies to build robust, scalable, and innovative solutions for your business.
+          </motion.p>
         </div>
 
         <div className="mb-12">
-          <div className="flex flex-wrap gap-8 mb-8 border-b border-gray-200">
+          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-8 border-b border-gray-200 overflow-x-auto">
             {Object.keys(technologies).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-1 py-4 text-sm font-medium transition-colors relative cursor-pointer ${
+                className={`px-4 py-4 text-sm sm:text-base font-medium transition-all duration-300 relative cursor-pointer whitespace-nowrap ${
                   activeTab === tab
-                    ? 'text-blue-600'
+                    ? 'text-[#CE0000]'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {tab}
                 {activeTab === tab && (
                   <motion.div 
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
+                    className="absolute bottom-0 left-0 right-0 h-1"
+                    style={{ backgroundColor: '#CE0000' }}
                     layoutId="activeTab"
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
                   />
                 )}
               </button>
@@ -155,32 +169,36 @@ export default function Technologies() {
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full"
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 w-full"
           >
             {technologies[activeTab].map((tech, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col items-center justify-center h-full"
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#CE0000]/20 hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center justify-center min-h-[140px] cursor-pointer"
               >
                 <div 
-                  className="relative mb-3 flex items-center justify-center"
+                  className="relative mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                   style={{ 
-                    width: '50px',
-                    height: '50px'
+                    width: '60px',
+                    height: '60px'
                   }}
                 >
                   <Image
                     src={tech.logo}
                     alt={`${tech.name} logo`}
-                    width={tech.width || 50}
-                    height={tech.height || 50}
+                    width={tech.width || 60}
+                    height={tech.height || 60}
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <span className="text-sm font-medium text-gray-700 text-center">
+                <span className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#CE0000] transition-colors duration-300">
                   {tech.name}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>

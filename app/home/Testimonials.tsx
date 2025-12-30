@@ -1,181 +1,194 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { useRef } from 'react';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Testimonial = {
   id: number;
   name: string;
   role: string;
-  company: string;
-  content: string;
-  avatar: string;
-  rating: number;
+  mainQuote: string;
+  supportingText: string;
 };
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Priya Natarajan',
-    role: 'Product Owner',
-    company: 'Tech Startup',
-    content: 'They transformed our idea into a powerful digital product. The app is fast, user-friendly, and highly scalable. Their team was extremely professional and transparent throughout the project. From UI/UX to backend development, everything was handled smoothly. We now have a product our customers love and our business has grown significantly.',
-    avatar: '/testimonial-1.jpg',
-    rating: 5,
+    name: 'Emily Santos',
+    role: 'Residential Client',
+    mainQuote: 'Bricknet exceeded all expectations. Our home turned out better than we dreamed!',
+    supportingText: 'Their team was professional, skilled, and attentive, providing excellent support throughout. Highly recommended for building your forever home.'
   },
   {
     id: 2,
-    name: 'Rajesh Kumar',
-    role: 'IT Manager',
-    company: 'Manufacturing Company',
-    content: 'From consultation to delivery, their team was reliable, proactive, and technically strong. They modernized our legacy system and automated key workflows. The performance improvements and support quality were outstanding. We truly value their partnership and long-term commitment.',
-    avatar: '/testimonial-2.jpg',
-    rating: 5,
+    name: 'Mark Li',
+    role: 'Commercial Developer',
+    mainQuote: 'From consultation to handover, their team was responsive, professional, and reliable.',
+    supportingText: 'Bricknet expertly managed our office complex construction, meeting deadlines and maintaining high craftsmanship. Their coordination was impressive, and we\'d gladly work with them again.'
   },
   {
     id: 3,
-    name: 'Meena Joseph',
-    role: 'Founder',
-    company: 'SaaS Company',
-    content: 'Excellent technical expertise and attention to detail. Our SaaS product launched on time and exceeded expectations. The team clearly understood our requirements and delivered clean, high-performance code. Communication was smooth and timelines were always maintained. Highly recommended for serious software projects.',
-    avatar: '/testimonial-3.jpg',
-    rating: 5,
+    name: 'Sarah Johnson',
+    role: 'Business Owner',
+    mainQuote: 'They transformed our idea into a powerful digital product that exceeded expectations.',
+    supportingText: 'The team was extremely professional and transparent throughout the project. We now have a product our customers love and our business has grown significantly.'
   },
   {
     id: 4,
-    name: 'Arun Patel',
-    role: 'Director',
-    company: 'Retail Business',
-    content: 'Their UI/UX and development quality stand out. The app runs flawlessly across Android and iOS. They guided us through every phase — planning, development, testing, and deployment. We truly appreciate their dedication and responsiveness. A great technology partner.',
-    avatar: '/testimonial-4.jpg',
-    rating: 5,
+    name: 'David Chen',
+    role: 'IT Manager',
+    mainQuote: 'Excellent technical expertise and attention to detail. Our project launched on time.',
+    supportingText: 'Communication was smooth and timelines were always maintained. Highly recommended for serious software projects.'
   },
   {
     id: 5,
-    name: 'Divya Sharma',
-    role: 'Operations Head',
-    company: 'Financial Services',
-    content: 'Very reliable support team. Issues are resolved quickly and proactively. They manage our application maintenance and enhancements with great professionalism. Performance and security have significantly improved since onboarding them.',
-    avatar: '/testimonial-5.jpg',
-    rating: 5,
-  },
+    name: 'Maria Garcia',
+    role: 'Product Director',
+    mainQuote: 'Very reliable support team. Issues are resolved quickly and proactively.',
+    supportingText: 'They manage our application maintenance and enhancements with great professionalism. Performance has significantly improved since onboarding them.'
+  }
 ];
 
-const NextArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'flex', right: -40, zIndex: 1 }}
-      onClick={onClick}
-      aria-label="Next testimonial"
-    >
-      <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </div>
-  );
-};
-
-const PrevArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'flex', left: -40, zIndex: 1 }}
-      onClick={onClick}
-      aria-label="Previous testimonial"
-    >
-      <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-    </div>
-  );
-};
-
 export default function Testimonials() {
-  const sliderRef = useRef<Slider>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? Math.ceil(testimonials.length / 2) - 1 : prev - 1));
   };
 
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === Math.ceil(testimonials.length / 2) - 1 ? 0 : prev + 1));
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const visibleTestimonials = [
+    testimonials[currentIndex * 2],
+    testimonials[currentIndex * 2 + 1]
+  ].filter(Boolean);
+
   return (
-    <section className="py-16 bg-gray-50 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-left mb-12">
-          <motion.h2 
-            className="text-3xl font-bold text-gray-900 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Testimonials
-          </motion.h2>
-          <motion.p 
-            className="text-gray-600 max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            What our clients say about us
-          </motion.p>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-12">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-8">
+            <div className="flex-1">
+              <motion.div 
+                className="inline-block px-3 py-1 rounded-md text-sm font-medium mb-4"
+                style={{ backgroundColor: '#FEECE7', color: '#CE0000' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Testimonials
+              </motion.div>
+
+              <motion.h2 
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                What Our Clients Say
+              </motion.h2>
+
+              <motion.p 
+                className="text-lg text-gray-600 max-w-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                Hear from those who've built with us and see how we brought their visions to life.
+              </motion.p>
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex items-center gap-3 mt-4 md:mt-0">
+              <button
+                onClick={handlePrevious}
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors duration-200"
+                aria-label="Previous testimonials"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-700" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors duration-200"
+                aria-label="Next testimonials"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-700" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="relative px-10">
-          <Slider ref={sliderRef} {...settings}>
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="px-3 py-2">
-                <div className="bg-white rounded-lg p-6 border border-gray-100 hover:shadow-md transition-all duration-300 h-full">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg mr-4">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-500">{testimonial.role} – {testimonial.company}</p>
-                    </div>
-                  </div>
-                  <div className="relative pl-6">
-                    <svg 
-                      className="absolute left-0 top-1 h-5 w-5 text-blue-500" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <p className="text-gray-600 text-sm leading-relaxed">{testimonial.content}</p>
-                  </div>
-                </div>
+        {/* Testimonial Cards */}
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+        >
+          {visibleTestimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className="rounded-xl p-6 sm:p-8"
+              style={{ backgroundColor: '#FEECE7' }}
+            >
+              {/* Quote Icon */}
+              <div className="mb-4">
+                <svg
+                  className="w-12 h-12"
+                  style={{ color: '#CE0000' }}
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
               </div>
-            ))}
-          </Slider>
+
+              {/* Main Quote */}
+              <p className="text-base sm:text-lg font-bold text-gray-900 mb-4">
+                {testimonial.mainQuote}
+              </p>
+
+              {/* Supporting Text */}
+              <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed">
+                {testimonial.supportingText}
+              </p>
+
+              {/* Client Info */}
+              <p className="text-sm sm:text-base text-gray-800 italic">
+                {testimonial.name}, {testimonial.role}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Pagination Dots */}
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`transition-all duration-300 ${
+                currentIndex === index
+                  ? 'w-8 h-2'
+                  : 'w-2 h-2'
+              } rounded-full`}
+              style={{
+                backgroundColor: currentIndex === index ? '#CE0000' : '#D1D5DB'
+              }}
+              aria-label={`Go to testimonial page ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

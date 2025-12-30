@@ -1,36 +1,31 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 
 const services = [
   {
-    title: "Web Development",
-    description: "Responsive, SEO-friendly websites built with modern technologies.",
-    icon: "🌐"
+    title: "Web Development"
   },
   {
-    title: "Mobile App Development",
-    description: "Custom Android & iOS applications with native performance.",
-    icon: "📱"
+    title: "Mobile Application"
   },
   {
-    title: "Web Application Development",
-    description: "Secure, scalable web systems tailored to your needs.",
-    icon: "💻"
+    title: "Cloud Computing"
   },
   {
-    title: "E-Commerce Solutions",
-    description: "Complete online selling platforms with secure payment integration.",
-    icon: "�"
+    title: "Data Analytics"
   },
   {
-    title: "UI/UX Design",
-    description: "Clean, intuitive, and user-friendly interface designs.",
-    icon: "🎨"
+    title: "Artificial Intelligence"
   },
   {
-    title: "Digital Marketing",
-    description: "Comprehensive SEO and social media growth strategies.",
-    icon: "📈"
+    title: "Cyber Security"
+  },
+  {
+    title: "Software Integration"
+  },
+  {
+    title: "IT Consulting"
   }
 ];
 
@@ -42,7 +37,8 @@ export default function ServicesSection() {
           {/* Left Column - Content */}
           <div className="space-y-8">
             <motion.div 
-              className="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium"
+              className="inline-block px-4 py-1 rounded-full text-sm font-medium"
+              style={{ backgroundColor: '#CE000040', color: '#CE0000' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,7 +53,7 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              We Provide <span className="text-blue-600">Awesome Services</span>
+              We Provide <span style={{ color: '#CE0000' }}>Awesome Services</span>
             </motion.h2>
 
             <motion.p 
@@ -70,26 +66,36 @@ export default function ServicesSection() {
               We offer a comprehensive suite of services to help your business thrive in the digital landscape.
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
               {services.map((service, index) => (
-                <motion.div 
+                <motion.li 
                   key={service.title}
-                  className="flex items-start space-x-4 p-4 rounded-xl border border-gray-100 hover:shadow-md transition-all bg-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  className="flex items-center space-x-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 * Math.floor(index / 2) }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-xl text-blue-600">
-                    {service.icon}
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#CE0000' }}>
+                    <CheckCircle className="w-4 h-4 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">{service.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{service.description}</p>
-                  </div>
-                </motion.div>
+                  <h3 className="text-base font-medium text-gray-800">{service.title}</h3>
+                </motion.li>
               ))}
-            </div>
+            </ul>
+
+            <motion.button
+              className="text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-200 text-sm mt-6"
+              style={{ backgroundColor: '#CE0000' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#b30000'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#CE0000'}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              See More
+            </motion.button>
           </div>
 
           {/* Right Column - Image */}
@@ -101,7 +107,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Image
-              src="/Mockup_laptop-1.png"
+              src="/redlaptop.png"
               alt="Laptop mockup showing our work"
               fill
               className="object-contain object-center"
