@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -28,7 +28,7 @@ export default function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-600 mb-4">
               Empowering businesses with innovative digital solutions to drive growth and success in the digital age.
             </p>
             <div className="flex space-x-4">
@@ -38,7 +38,7 @@ export default function Footer() {
                   href={`https://${social}.com`} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-[#CE0000] transition-colors"
                 >
                   <span className="sr-only">{social}</span>
                   <i className={`fab fa-${social} text-xl`}></i>
@@ -54,7 +54,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
               {[
                 { name: 'Home', href: '/' },
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link 
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-[#CE0000] transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -82,19 +82,19 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-900">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <i className="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
-                <span className="text-gray-400">123 Tech Park, Bangalore, India</span>
+                <i className="fas fa-map-marker-alt mt-1 mr-3" style={{ color: '#CE0000' }}></i>
+                <span className="text-gray-600">123 Tech Park, Bangalore, India</span>
               </li>
               <li className="flex items-center">
-                <i className="fas fa-phone-alt mr-3 text-blue-400"></i>
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-white">+91 98765 43210</a>
+                <i className="fas fa-phone-alt mr-3" style={{ color: '#CE0000' }}></i>
+                <a href="tel:+919876543210" className="text-gray-600 hover:text-[#CE0000] transition-colors">+91 98765 43210</a>
               </li>
               <li className="flex items-center">
-                <i className="fas fa-envelope mr-3 text-blue-400"></i>
-                <a href="mailto:info@manokarkannan.com" className="text-gray-400 hover:text-white">info@manokarkannan.com</a>
+                <i className="fas fa-envelope mr-3" style={{ color: '#CE0000' }}></i>
+                <a href="mailto:info@manokarkannan.com" className="text-gray-600 hover:text-[#CE0000] transition-colors">info@manokarkannan.com</a>
               </li>
             </ul>
           </motion.div>
@@ -102,7 +102,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <motion.div 
-          className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm"
+          className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -110,9 +110,9 @@ export default function Footer() {
         >
           <p>© {currentYear} Manokar Kannan Dynamic Technology. All rights reserved.</p>
           <div className="mt-2">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="mx-2">•</span>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="text-gray-600 hover:text-[#CE0000] transition-colors">Privacy Policy</Link>
+            <span className="mx-2 text-gray-400">•</span>
+            <Link href="/terms" className="text-gray-600 hover:text-[#CE0000] transition-colors">Terms of Service</Link>
           </div>
         </motion.div>
       </div>
