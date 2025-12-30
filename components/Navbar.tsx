@@ -8,14 +8,15 @@ import { motion, AnimatePresence } from "framer-motion";
 type NavItem = {
   name: string;
   path: string;
+  isHashLink?: boolean;
 };
 
 const navItems: NavItem[] = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Career', path: '#career' },
-  { name: 'Contact Us', path: '#contact' }
+  { name: 'Home', path: '/', isHashLink: false },
+  { name: 'About Us', path: '#about', isHashLink: true },
+  { name: 'Services', path: '#services', isHashLink: true },
+  { name: 'Career', path: '/career', isHashLink: false },
+  { name: 'Contact Us', path: '/contact', isHashLink: false }
 ];
 
 export default function Navbar() {
@@ -61,16 +62,30 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center justify-center">
           <div className="bg-white/10 backdrop-blur-md  rounded-full px-8 py-3">
             <div className="flex items-center space-x-8">
-              {navItems.map((item) => (
-                item.path.startsWith('#') ? (
-                  <a 
-                    key={item.name}
-                    href={item.path}
-                    className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
+              {navItems.map((item) => {
+                if (item.isHashLink) {
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.path}
+                      className="text-white hover:text-blue-300 text-sm font-medium transition-colors cursor-pointer"
+                      onClick={(e) => {
+                        if (window.location.pathname === '/') {
+                          e.preventDefault();
+                          const element = document.querySelector(item.path);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        } else {
+                          window.location.href = `/${item.path}`;
+                        }
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                }
+                return (
                   <Link 
                     key={item.name}
                     href={item.path}
@@ -78,15 +93,15 @@ export default function Navbar() {
                   >
                     {item.name}
                   </Link>
-                )
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
         
         {/* Enquiry Button - Right Aligned */}
         <div className="hidden lg:block">
-          <button className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white px-6 py-2  text-sm font-medium transition-all duration-300 transform hover:scale-105">
+          <button   className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium mt-3 cursor-pointer">
             Enquiry Now
           </button>
         </div>
@@ -119,12 +134,21 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 space-y-3">
               {navItems.map((item) => (
-                item.path.startsWith('#') ? (
+                item.isHashLink ? (
                   <a
                     key={item.name}
                     href={item.path}
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      setMobileMenuOpen(false);
+                      if (window.location.pathname === '/') {
+                        e.preventDefault();
+                        const element = document.querySelector(item.path);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
                   >
                     {item.name}
                   </a>
@@ -139,7 +163,7 @@ export default function Navbar() {
                   </Link>
                 )
               ))}
-              <button className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3">
+              <button className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3 cursor-pointer">
                 Enquiry Now
               </button>
             </div>

@@ -25,7 +25,7 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+    <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left Column */}

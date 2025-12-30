@@ -84,7 +84,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Testimonials
+                TESTIMONIALS
               </motion.div>
 
               <motion.h2 
@@ -110,20 +110,24 @@ export default function Testimonials() {
 
             {/* Navigation Arrows */}
             <div className="flex items-center gap-3 mt-4 md:mt-0">
-              <button
+            <motion.button
                 onClick={handlePrevious}
-                className="w-10 h-10 border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors duration-200"
+                whileHover={{ scale: 1.1, backgroundColor: '#FEECE7' }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#FEECE7] flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Previous testimonials"
-              >
+            >
                 <ChevronLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              <button
+            </motion.button>
+            <motion.button
                 onClick={handleNext}
-                className="w-10 h-10 border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors duration-200"
+                whileHover={{ scale: 1.1, backgroundColor: '#FEECE7' }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#FEECE7] flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Next testimonials"
-              >
+            >
                 <ChevronRight className="w-5 h-5 text-gray-700" />
-              </button>
+            </motion.button>
             </div>
           </div>
         </div>
@@ -137,39 +141,42 @@ export default function Testimonials() {
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
         >
           {visibleTestimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className="rounded-xl p-6 sm:p-8"
-              style={{ backgroundColor: '#FEECE7' }}
-            >
-              {/* Quote Icon */}
-              <div className="mb-4">
-                <svg
-                  className="w-12 h-12"
-                  style={{ color: '#CE0000' }}
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
+  <div
+    key={testimonial.id}
+    className="group relative rounded-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg"
+    style={{ backgroundColor: '#FEECE7' }}
+  >
+    {/* Red overlay on hover */}
+    <div className="absolute inset-0 bg-[#CE0000] rounded-xl opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+    
+    {/* Quote Icon */}
+    <div className="mb-4">
+      <svg
+        className="w-12 h-12"
+        style={{ color: '#CE0000' }}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+      </svg>
+    </div>
 
-              {/* Main Quote */}
-              <p className="text-base sm:text-lg font-bold text-gray-900 mb-4">
-                {testimonial.mainQuote}
-              </p>
+    {/* Main Quote */}
+    <p className="relative text-base sm:text-lg font-bold text-gray-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+      {testimonial.mainQuote}
+    </p>
 
-              {/* Supporting Text */}
-              <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed">
-                {testimonial.supportingText}
-              </p>
+    {/* Supporting Text */}
+    <p className="relative text-sm sm:text-base text-gray-700 mb-6 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">
+      {testimonial.supportingText}
+    </p>
 
-              {/* Client Info */}
-              <p className="text-sm sm:text-base text-gray-800 italic">
-                {testimonial.name}, {testimonial.role}
-              </p>
-            </div>
-          ))}
+    {/* Client Info */}
+    <p className="relative text-sm sm:text-base text-gray-800 italic group-hover:translate-x-1 transition-transform duration-300">
+      {testimonial.name}, {testimonial.role}
+    </p>
+  </div>
+))}
         </motion.div>
 
         {/* Pagination Dots */}

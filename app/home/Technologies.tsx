@@ -116,7 +116,7 @@ export default function Technologies() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Our Technologies
+            OUR TECHNOLOGICS
           </motion.div>
 
           <motion.h2 

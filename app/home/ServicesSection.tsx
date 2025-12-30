@@ -32,20 +32,19 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 bg-white">
+    <section id="services" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             <motion.div 
-              className="inline-block px-4 py-1 rounded-full text-sm font-medium"
-              style={{ backgroundColor: '#CE000040', color: '#CE0000' }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Our Services
-            </motion.div>
+                className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-[#CE000040] text-[#CE0000]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                >
+                OUR SERVICES
+                </motion.div>
 
             <motion.h2 
               className="text-4xl sm:text-5xl font-bold text-gray-900"

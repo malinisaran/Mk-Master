@@ -39,14 +39,26 @@ export default function HomePage() {
               your business.
               </motion.p>
 
-              <motion.button
-                className="bg-[#F6D516] text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base cursor-pointer hover:scale-105 transition mx-auto w-fit mt-2 sm:mt-4"
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center">
+              <motion.a
+                href="/services"
+                className="bg-[#F6D516] text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center rounded-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Know More
-              </motion.button>  
+                Explore Our Services
+              </motion.a>
+              <motion.a
+                href="/contact"
+                className="bg-white text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center border border-gray-200 rounded-sm"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Get a Free Quote
+              </motion.a>
+            </div> 
               </div>
             </div>
           </div>
