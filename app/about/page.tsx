@@ -153,7 +153,7 @@ export default function AboutPage() {
               <div className="relative flex-1 w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]">
                 <div className="relative rounded-xl overflow-hidden bg-gray-100 w-full h-full">
                   <Image
-                    src="/combinedImge.jpg"
+                    src="/combine2.jpg"
                     alt="Digital transformation"
                     fill
                     className="object-cover"
