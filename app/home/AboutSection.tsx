@@ -89,7 +89,7 @@ export default function AboutSection() {
             {/* Right Side - UI Design */}
             <div className="relative flex-1 w-full lg:w-auto flex flex-col justify-between h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]">
               {/* Happy Clients and More Review Section with Rocket Background */}
-              <div className="relative rounded-lg shadow-xl overflow-hidden mb-3 sm:mb-4 md:mb-5 z-10 flex-1 min-h-0">
+              <div className="relative rounded-lg shadow-xl overflow-hidden mb-3 sm:mb-4 md:mb-5  flex-1 min-h-0">
                 <div 
                   className="relative bg-cover bg-center bg-no-repeat p-3 sm:p-4 md:p-5 lg:p-6 h-full"
                   style={{ backgroundImage: 'url(/rocket.jpg)' }}
@@ -98,7 +98,7 @@ export default function AboutSection() {
                   <div className="absolute inset-0 bg-white/70"></div>
                   
                   {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div className="relative  h-full flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-2 sm:mb-2.5 md:mb-3">
                         <div className="flex -space-x-1 sm:-space-x-1.5 md:-space-x-2">
@@ -137,7 +137,7 @@ export default function AboutSection() {
               </div>
 
               {/* Increase Company Efficiency Card */}
-              <div className="relative text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-lg shadow-xl z-10 flex-shrink-0 h-[80px] sm:h-[100px] md:h-[110px] lg:h-[120px] xl:h-[130px] 2xl:h-[140px] flex flex-col justify-center" style={{ backgroundColor: '#04BDF1' }}>
+              <div className="relative text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-lg shadow-xl  flex-shrink-0 h-[80px] sm:h-[100px] md:h-[110px] lg:h-[120px] xl:h-[130px] 2xl:h-[140px] flex flex-col justify-center" style={{ backgroundColor: '#04BDF1' }}>
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-1.5 md:mb-2">+75%</div>
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg">Increase company efficiency</p>
               </div>
