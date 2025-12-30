@@ -88,7 +88,7 @@ export default function ServicesPage() {
             className="text-center mb-12 sm:mb-16"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              Transform Your <span style={{ color: '#CE0000' }}>Digital Future</span>
+              Transform Your <span style={{ color: '#04BDF1' }}>Digital Future</span>
             </h1>
           </motion.div>
 
@@ -115,13 +115,13 @@ export default function ServicesPage() {
                           fill
                           className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-300"
                         />
-                        <div className="absolute inset-0 bg-[#CE0000]/20 group-hover:bg-[#CE0000]/30 transition-colors duration-300"></div>
+                        <div className="absolute inset-0 bg-[#04BDF1]/20 group-hover:bg-[#04BDF1]/30 transition-colors duration-300"></div>
                       </div>
                     </>
                   ) : (
                     <div 
                       className="absolute inset-0 transition-colors duration-300 group-hover:opacity-90"
-                      style={{ backgroundColor: '#CE0000' }}
+                      style={{ backgroundColor: '#04BDF1' }}
                     ></div>
                   )}
 
@@ -138,8 +138,8 @@ export default function ServicesPage() {
                     <div className="mt-auto">
                       {/* Icon in Bottom Left */}
                       <div className="mb-4 sm:mb-6">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border-2 group-hover:scale-110 transition-transform duration-300" style={{ borderColor: '#CE0000' }}>
-                          <div style={{ color: '#CE0000' }}>
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border-2 group-hover:scale-110 transition-transform duration-300" style={{ borderColor: '#04BDF1' }}>
+                          <div style={{ color: '#04BDF1' }}>
                             {service.icon}
                           </div>
                         </div>
@@ -195,19 +195,19 @@ export default function ServicesPage() {
                         fill
                         className="object-cover opacity-20"
                       />
-                      <div className="absolute inset-0 bg-[#CE0000]/10"></div>
+                      <div className="absolute inset-0 bg-[#04BDF1]/10"></div>
                     </div>
                   ) : (
                     <div 
                       className="absolute inset-0 rounded-t-2xl opacity-10"
-                      style={{ backgroundColor: '#CE0000' }}
+                      style={{ backgroundColor: '#04BDF1' }}
                     ></div>
                   )}
                   
                   <div className="relative z-10 flex items-start justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border-2 shadow-md" style={{ borderColor: '#CE0000' }}>
-                        <div style={{ color: '#CE0000' }}>
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border-2 shadow-md" style={{ borderColor: '#04BDF1' }}>
+                        <div style={{ color: '#04BDF1' }}>
                           {selectedService.icon}
                         </div>
                       </div>
@@ -235,9 +235,9 @@ export default function ServicesPage() {
                   <button
                     onClick={closeModal}
                     className="text-white font-medium py-3 px-8 rounded-md transition-colors duration-200 text-sm sm:text-base"
-                    style={{ backgroundColor: '#CE0000' }}
-                    onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#b30000'}
-                    onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#CE0000'}
+                    style={{ backgroundColor: '#04BDF1' }}
+                    onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'}
+                    onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
                   >
                     Close
                   </button>
