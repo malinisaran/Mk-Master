@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
 const services = [
@@ -84,18 +85,22 @@ export default function ServicesSection() {
               ))}
             </ul>
 
-            <motion.button
-              className="text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-200 text-sm mt-6"
-              style={{ backgroundColor: '#CE0000' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#b30000'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#CE0000'}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              See More
-            </motion.button>
+              <Link
+                href="/services"
+                className="text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-200 text-sm mt-6 inline-block"
+                style={{ backgroundColor: '#CE0000' }}
+                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#b30000'}
+                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#CE0000'}
+              >
+                See More
+              </Link>
+            </motion.div>
           </div>
 
           {/* Right Column - Image */}

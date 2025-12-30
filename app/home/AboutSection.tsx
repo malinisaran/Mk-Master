@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle, Rocket, Users, Monitor, Smile, Award, ArrowUpRight } from "lucide-react";
 
 const features = [
@@ -60,9 +61,15 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <button className="text-white font-medium py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 lg:px-10 rounded-md transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg w-fit" style={{ backgroundColor: '#04BDF1' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#03a8d8'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#04BDF1'}>
+            <Link 
+              href="/about"
+              className="text-white font-medium py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 lg:px-10 rounded-md transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg w-fit inline-block" 
+              style={{ backgroundColor: '#04BDF1' }} 
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'} 
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
+            >
               Learn More
-            </button>
+            </Link>
           </motion.div>
 
           {/* Right Column */}
