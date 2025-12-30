@@ -4,6 +4,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+type NavItem = {
+  name: string;
+  path: string;
+};
+
+const navItems: NavItem[] = [
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '#about' },
+  { name: 'Services', path: '/services' },
+  { name: 'Career', path: '#career' },
+  { name: 'Contact Us', path: '#contact' }
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,17 +58,13 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center justify-center">
           <div className="bg-white/10 backdrop-blur-md rounded-full px-8 py-3">
             <div className="flex items-center space-x-8">
-              {['Home', 'About Us', 'Services', 'Career', 'Contact Us'].map((item) => (
+              {navItems.map((item) => (
                 <a 
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className={`text-[15px] font-medium transition-colors ${
-                    item === 'Home' 
-                      ? 'text-[#F6D516] font-semibold' 
-                      : 'text-white/90 hover:text-white'
-                  }`}
+                  key={item.name}
+                  href={item.path}
+                  className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
@@ -96,14 +105,14 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <div className="px-6 py-4 space-y-3">
-              {['Home', 'About Us', 'Services', 'Career', 'Contact Us'].map((item) => (
+              {navItems.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="block text-white hover:text-[#F6D516] py-2 text-base"
+                  key={item.name}
+                  href={item.path}
+                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
               <button className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3">
