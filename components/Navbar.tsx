@@ -32,14 +32,16 @@ export default function Navbar() {
 
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300 ${
-        scrolled ? 'bg-[#0F1B2D] shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300  ${
+        scrolled 
+          ? 'bg-[#0F1B2D]/90 shadow-lg' 
+          : ''
       }`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="px-4 md:px-20 lg:px-24 mx-auto flex items-center justify-between w-full px-4">
+      <div className="px-4 md:px-8 lg:px-12 mx-auto flex items-center justify-between w-full max-w-7xl">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="#" className="flex items-center">
@@ -56,7 +58,7 @@ export default function Navbar() {
         
         {/* Desktop Navigation - Centered with Frosted Glass Background */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="bg-white/10 backdrop-blur-md rounded-full px-8 py-3">
+          <div className="bg-white/10 backdrop-blur-md  rounded-full px-8 py-3">
             <div className="flex items-center space-x-8">
               {navItems.map((item) => (
                 <a 
@@ -73,7 +75,7 @@ export default function Navbar() {
         
         {/* Enquiry Button - Right Aligned */}
         <div className="hidden lg:block">
-          <button className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105">
+          <button className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white px-6 py-2  text-sm font-medium transition-all duration-300 transform hover:scale-105">
             Enquiry Now
           </button>
         </div>
