@@ -17,14 +17,14 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: 'Emily Santos',
     role: 'Residential Client',
-    mainQuote: 'Bricknet exceeded all expectations. Our home turned out better than we dreamed!',
+    mainQuote: 'MKDT transformed our digital presence — highly professional!”',
     supportingText: 'Their team was professional, skilled, and attentive, providing excellent support throughout. Highly recommended for building your forever home.'
   },
   {
     id: 2,
     name: 'Mark Li',
     role: 'Commercial Developer',
-    mainQuote: 'From consultation to handover, their team was responsive, professional, and reliable.',
+    mainQuote: 'Their mobile app development was seamless and on-time.',
     supportingText: 'Bricknet expertly managed our office complex construction, meeting deadlines and maintaining high craftsmanship. Their coordination was impressive, and we\'d gladly work with them again.'
   },
   {

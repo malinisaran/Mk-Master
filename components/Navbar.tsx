@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 type NavItem = {
@@ -11,7 +12,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { name: 'Home', path: '/' },
-  { name: 'About Us', path: '#about' },
+  { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Career', path: '#career' },
   { name: 'Contact Us', path: '#contact' }
@@ -44,7 +45,7 @@ export default function Navbar() {
       <div className="px-4 md:px-8 lg:px-12 mx-auto flex items-center justify-between w-full max-w-7xl">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <a href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image 
               src="/CompanyLogo.png" 
               alt="Manokar Kannan Dynamic Technology" 
@@ -53,7 +54,7 @@ export default function Navbar() {
               className="h-20 w-auto"
               priority
             />
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Navigation - Centered with Frosted Glass Background */}
@@ -61,13 +62,23 @@ export default function Navbar() {
           <div className="bg-white/10 backdrop-blur-md  rounded-full px-8 py-3">
             <div className="flex items-center space-x-8">
               {navItems.map((item) => (
-                <a 
-                  key={item.name}
-                  href={item.path}
-                  className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
-                >
-                  {item.name}
-                </a>
+                item.path.startsWith('#') ? (
+                  <a 
+                    key={item.name}
+                    href={item.path}
+                    className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link 
+                    key={item.name}
+                    href={item.path}
+                    className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -108,14 +119,25 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 space-y-3">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.path}
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.path.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.path}
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <button className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3">
                 Enquiry Now
