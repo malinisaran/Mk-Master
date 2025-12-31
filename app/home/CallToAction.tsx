@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 
 export default function CallToAction() {
   return (
-    <section className="py-16 text-white relative">
+    <section className="py-12 sm:py-16 md:py-20 text-white relative">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/ctaimage.png)' }}
       />
-      <div className="absolute inset-0 bg-black/50 z-[5]" />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="text-center">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -23,7 +23,7 @@ export default function CallToAction() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl mb-8 max-w-2xl mx-auto opacity-90"
+            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90 px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -91,9 +91,9 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Content */}
-        <div className="w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 lg:pt-25 relative z-10">
+        <div className="w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-32 relative z-10">
           <motion.h1 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 text-[#F6D516] w-full px-2"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 text-[#F6D516] w-full px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -122,33 +122,33 @@ export default function AboutPage() {
       
       <AboutSection showLearnMore={false} />
       
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-25 bg-white">
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Vision Section - Left Side */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6 sm:space-y-8"
+              className="space-y-4 sm:space-y-6"
             >
               <div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-5">
                   Our <span className="text-[#04BDF1]">Vision</span>
                 </h2>
-                <div className="space-y-6 sm:space-y-7 md:space-y-8">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   {visionPoints.map((point, index) => {
                     const IconComponent = point.icon;
                     return (
-                      <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                      <div key={index} className="flex items-start space-x-2.5 sm:space-x-3 md:space-x-4">
                         <div className="flex-shrink-0 p-1.5 sm:p-2 rounded-lg bg-[#04BDF120]">
-                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-[#04BDF1]" />
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#04BDF1]" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-1.5 sm:mb-2">
+                          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-1 sm:mb-1.5">
                             {point.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                          <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                             {point.description}
                           </p>
                         </div>
@@ -164,25 +164,25 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6 sm:space-y-8"
+              className="space-y-4 sm:space-y-6"
             >
               <div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-5">
                   Our <span className="text-[#04BDF1]">Mission</span>
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-7 md:mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                   Our mission is to deliver high-quality, secure, and scalable website and mobile application solutions that help businesses grow and succeed digitally.
                 </p>
-                <div className="space-y-5 sm:space-y-6">
+                <div className="space-y-4 sm:space-y-5">
                   {missionCommitments.map((commitment, index) => {
                     const IconComponent = commitment.icon;
                     return (
-                      <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                      <div key={index} className="flex items-start space-x-2.5 sm:space-x-3 md:space-x-4">
                         <div className="flex-shrink-0 p-1.5 sm:p-2 rounded-lg bg-[#04BDF120]">
-                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-[#04BDF1]" />
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#04BDF1]" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-1">
+                          <h4 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-0.5 sm:mb-1">
                             {commitment.title}
                           </h4>
                           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">

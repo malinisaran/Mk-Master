@@ -71,11 +71,11 @@ export default function Testimonials() {
   ].filter(Boolean);
 
   return (
-    <section className="py-16 -mt-30 ml-5 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Header */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-8">
+        <div className="mb-6 sm:mb-8 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-6 sm:mb-8">
             <div className="flex-1">
               <motion.div 
                 className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
@@ -137,7 +137,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8"
         >
           {visibleTestimonials.map((testimonial, index) => (
   <div

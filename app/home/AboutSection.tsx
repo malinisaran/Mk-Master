@@ -29,16 +29,16 @@ interface AboutSectionProps {
 
 export default function AboutSection({ showLearnMore = true }: AboutSectionProps) {
   return (
-    <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
+    <section id="about" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 sm:space-y-8 md:space-y-10"
+            className="space-y-4 sm:space-y-6 md:space-y-8"
           >
             <div>
               <div className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" style={{ color: '#04BDF1' }}>ABOUT US</div>
@@ -49,7 +49,7 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
                   Discover the insights you need to make confident decisions. From setup to support, we've simplified the answers for you.              </p>
             </div>
 
-            <div className="space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="space-y-3 sm:space-y-4 md:space-y-5">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3 sm:space-x-4 md:space-x-5">
                   <div className="flex-shrink-0 mt-1 p-1.5 sm:p-2 md:p-2.5 rounded-lg" style={{ backgroundColor: '#04BDF120' }}>
