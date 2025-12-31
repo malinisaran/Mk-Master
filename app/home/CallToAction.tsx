@@ -1,13 +1,16 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { useEnquiryModal } from '@/contexts/EnquiryModalContext';
 
 export default function CallToAction() {
+  const { openModal } = useEnquiryModal();
+
   return (
-    <section className="pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16 text-white relative">
+    <section className="pt-2 sm:pt-4 md:pt-6 pb-6 sm:pb-8 md:pb-12 text-white relative">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/ctaimage.png)' }}
+        style={{ backgroundImage: 'url(/cta/ctaimage.png)' }}
       />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
@@ -39,9 +42,9 @@ export default function CallToAction() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <a
-              href="#contact"
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center justify-center"
+            <button
+              onClick={openModal}
+              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center justify-center cursor-pointer"
             >
               Contact Us
               <svg
@@ -58,7 +61,7 @@ export default function CallToAction() {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </a>
+            </button>
             
     
           </motion.div>

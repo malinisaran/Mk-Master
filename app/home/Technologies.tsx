@@ -17,7 +17,7 @@ const technologies: TechnologiesType = {
   'UI/UX Design': [
     { 
       name: 'Figma', 
-      logo: '/figma-full-stack-design.webp',
+      logo: '/technologies/figma-full-stack-design.webp',
       width: 40,
       height: 60
     }
@@ -25,31 +25,31 @@ const technologies: TechnologiesType = {
   'Front-End Development': [
     { 
       name: 'HTML', 
-      logo: '/html.webp',
+      logo: '/technologies/Html.webp',
       width: 60,
       height: 60
     },
     { 
       name: 'CSS', 
-      logo: '/css.webp',
+      logo: '/technologies/Css.webp',
       width: 60,
       height: 60
     },
     { 
       name: 'JavaScript', 
-      logo: '/javascript.webp',
+      logo: '/technologies/javascript.webp',
       width: 60,
       height: 60
     },
     { 
       name: 'React JS', 
-      logo: '/react.webp',
+      logo: '/technologies/react.webp',
       width: 60,
       height: 60
     },
     { 
       name: 'Bootstrap', 
-      logo: '/bootstrap.webp',
+      logo: '/technologies/bootstrap.webp',
       width: 60,
       height: 60
     }
@@ -57,31 +57,31 @@ const technologies: TechnologiesType = {
   'Backend Development': [
     { 
       name: 'Node.js', 
-      logo: '/node.js-full-stack-development.webp',
+      logo: '/technologies/node.js-full-stack-development.webp',
       width: 50,
       height: 50
     },
     { 
       name: 'Express.js', 
-      logo: '/express.js-full-stack-development.webp',
+      logo: '/technologies/express.js-full-stack-development.webp',
       width: 50,
       height: 50
     },
     { 
       name: 'PHP', 
-      logo: '/php.webp',
+      logo: '/technologies/php.webp',
       width: 50,
       height: 50
     },
     { 
       name: 'Python', 
-      logo: '/python.webp',
+      logo: '/technologies/python.webp',
       width: 50,
       height: 50
     },
     { 
       name: 'MySQL', 
-      logo: '/mysql-full-stack-development.webp',
+      logo: '/technologies/mysql-full-stack-development.webp',
       width: 50,
       height: 50
     }
@@ -89,13 +89,89 @@ const technologies: TechnologiesType = {
   'Database Management System': [
     { 
       name: 'MySQL', 
-      logo: '/mysql-full-stack-development.webp',
+      logo: '/technologies/mysql-full-stack-development.webp',
       width: 60,
       height: 60
     },
     { 
       name: 'MongoDB', 
-      logo: '/mongodb-full-stack-db.webp',
+      logo: '/technologies/mongodb-full-stack-db.webp',
+      width: 60,
+      height: 60
+    }
+  ],
+  'Mobile App Development': [
+    { 
+      name: 'React Native', 
+      logo: '/technologies/react.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Flutter', 
+      logo: '/technologies/flutter.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Swift', 
+      logo: '/technologies/swift.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Kotlin', 
+      logo: '/technologies/kotlin.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Ionic', 
+      logo: '/technologies/ionic.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Xamarin', 
+      logo: '/technologies/xamarin.webp',
+      width: 60,
+      height: 60
+    }
+  ],
+  'Digital Marketing': [
+    { 
+      name: 'SEO', 
+      logo: '/technologies/seo.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Google Analytics', 
+      logo: '/technologies/google-analytics.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Social Media', 
+      logo: '/technologies/social-media.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Content Marketing', 
+      logo: '/technologies/content-marketing.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'Email Marketing', 
+      logo: '/technologies/email-marketing.webp',
+      width: 60,
+      height: 60
+    },
+    { 
+      name: 'PPC Advertising', 
+      logo: '/technologies/ppc-advertising.webp',
       width: 60,
       height: 60
     }
@@ -106,9 +182,9 @@ export default function Technologies() {
   const [activeTab, setActiveTab] = useState<string>('UI/UX Design');
 
   return (
-    <section className="pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8 bg-white">   
+    <section className="pt-1 sm:pt-2 md:pt-3 pb-2 sm:pb-4 md:pb-6 bg-white">   
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="text-left mb-3 sm:mb-4 md:mb-6">
+        <div className="text-left mb-2 sm:mb-3 md:mb-4">
           <motion.div 
             className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
             initial={{ opacity: 0, y: 20 }}
@@ -139,8 +215,14 @@ export default function Technologies() {
           </motion.p>
         </div>
 
-        <div className="mb-0 sm:mb-2 md:mb-4">
-          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 border-b border-gray-200 overflow-x-auto">
+        <div className="mb-0 sm:mb-1 md:mb-2">
+          <div 
+            className="flex flex-nowrap gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 border-b border-gray-200 overflow-x-auto scrollbar-hide"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none'
+            } as React.CSSProperties}
+          >
             {Object.keys(technologies).map((tab) => (
               <button
                 key={tab}

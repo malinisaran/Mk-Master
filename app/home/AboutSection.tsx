@@ -29,7 +29,7 @@ interface AboutSectionProps {
 
 export default function AboutSection({ showLearnMore = true }: AboutSectionProps) {
   return (
-    <section id="about" className="py-4 sm:py-6 md:py-8 lg:py-10 bg-white">
+    <section id="about" className="py-2 sm:py-4 md:py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column */}
@@ -90,7 +90,7 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
             <div className="relative flex-1 w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]">
               <div className="relative rounded-xl overflow-hidden bg-gray-100 w-full h-full">
                 <Image
-                  src="/combinedImge.jpg"
+                  src="/services/combinedImge.jpg"
                   alt="Digital transformation"
                   fill
                   className="object-cover"
@@ -105,7 +105,7 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
               <div className="relative rounded-lg shadow-xl overflow-hidden mb-3 sm:mb-4 md:mb-5  flex-1 min-h-0">
                 <div 
                   className="relative bg-cover bg-center bg-no-repeat p-3 sm:p-4 md:p-5 lg:p-6 h-full"
-                  style={{ backgroundImage: 'url(/rocket.jpg)' }}
+                  style={{ backgroundImage: 'url(/services/rocket.jpg)' }}
                 >
                   {/* Overlay for better text readability */}
                   <div className="absolute inset-0 bg-white/70"></div>
@@ -117,7 +117,7 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
                         <div className="flex -space-x-1 sm:-space-x-1.5 md:-space-x-2">
                           <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
                             <Image
-                              src="/Group_client-e1761304644686.png"
+                              src="/logos/Group_client-e1761304644686.png"
                               alt="Client"
                               width={40}
                               height={40}

@@ -32,7 +32,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8 bg-white">
+    <section id="services" className="pt-1 sm:pt-2 md:pt-3 pb-2 sm:pb-4 md:pb-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Content */}
@@ -113,7 +113,7 @@ export default function ServicesSection() {
   transition={{ duration: 0.5, delay: 0.2 }}
 >
   <Image
-    src="/redlaptop.png"
+    src="/services/redlaptop.png"
     alt="Laptop mockup showing our work"
     fill
     className="object-contain object-center"

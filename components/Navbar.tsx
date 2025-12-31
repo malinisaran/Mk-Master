@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEnquiryModal } from "@/contexts/EnquiryModalContext";
 
 type NavItem = {
   name: string;
@@ -22,6 +23,7 @@ const navItems: NavItem[] = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openModal } = useEnquiryModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +46,7 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center">
             <Image 
-              src="/CompanyLogo.png" 
+              src="/logos/CompanyLogo.png" 
               alt="Manokar Kannan Dynamic Technology" 
               width={260}
               height={90}
@@ -97,7 +99,10 @@ export default function Navbar() {
         
         {/* Enquiry Button - Right Aligned */}
         <div className="hidden lg:flex items-center">
-          <button className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap">
+          <button 
+            onClick={openModal}
+            className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap cursor-pointer"
+          >
             Enquiry Now
           </button>
         </div>
@@ -105,7 +110,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-white p-2 cursor-pointer"
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,7 +164,13 @@ export default function Navbar() {
                   </Link>
                 )
               ))}
-              <button className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3 cursor-pointer">
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openModal();
+                }}
+                className="w-full  bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3 cursor-pointer"
+              >
                 Enquiry Now
               </button>
             </div>

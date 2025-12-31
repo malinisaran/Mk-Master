@@ -25,7 +25,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Code className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "We provide custom software development solutions tailored to your specific business needs. Our expert team builds scalable, secure, and high-performance applications using the latest technologies and best practices."
   },
   {
@@ -33,7 +33,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Globe className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "Build powerful web applications that drive business growth. We create responsive, user-friendly web solutions with modern frameworks and technologies that scale with your business."
   },
   {
@@ -41,7 +41,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Smartphone className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "Transform your business with native and cross-platform mobile applications. We deliver iOS and Android apps that provide exceptional user experiences and drive engagement."
   },
   {
@@ -49,7 +49,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Cloud className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "Leverage the power of cloud computing with our comprehensive cloud services. We help you migrate, manage, and optimize your cloud infrastructure for maximum efficiency and cost savings."
   },
   {
@@ -57,7 +57,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Network className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "Seamlessly connect your business systems and applications. Our integration services ensure smooth data flow and process automation across your entire technology ecosystem."
   },
   {
@@ -65,7 +65,7 @@ const services: ServiceCard[] = [
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Users className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/combinedImge.jpg",
+    imageSrc: "/services/combinedImge.jpg",
     details: "Get expert guidance on your technology strategy and implementation. Our consultants help you make informed decisions, optimize processes, and achieve your business objectives."
   }
 ];
@@ -88,16 +88,15 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero Section with Background Image */}
-=      <div className="relative h-[60vh] min-h-[400px] flex flex-col justify-center overflow-hidden">
+      <div className="relative h-[40vh] min-h-[250px] sm:h-[45vh] sm:min-h-[300px] md:h-[50vh] md:min-h-[350px] lg:h-[60vh] lg:min-h-[400px] flex flex-col justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url(/backgroundHomepage.jpg)',
-            backgroundAttachment: 'fixed',
+            backgroundImage: 'url(/backgrounds/backgroundHomepage.jpg)',
+            backgroundAttachment: 'scroll',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
-            transform: 'none !important',
             width: '100%',
             height: '100%',
             objectFit: 'cover'
@@ -107,9 +106,9 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Content */}
-        <div className="w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 mt-25 relative z-10">
+        <div className="w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-32 relative z-10">
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#F6D516] w-full"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 text-[#F6D516] w-full px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -117,19 +116,19 @@ export default function ServicesPage() {
             Services
           </motion.h1>
           <motion.div 
-            className="flex items-center justify-center bg-black/50 px-6 py-2.5 rounded-full backdrop-blur-sm shadow-lg"
+            className="flex items-center justify-center bg-black/50 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full backdrop-blur-sm shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <span 
               onClick={() => router.push('/')} 
-              className="text-white hover:text-blue-300 transition-colors cursor-pointer text-sm sm:text-base"
+              className="text-white hover:text-blue-300 transition-colors cursor-pointer text-xs sm:text-sm md:text-base"
             >
               Home
             </span>
-            <span className="mx-2 text-white">/</span>
-            <span className="text-blue-300 text-sm sm:text-base">
+            <span className="mx-1.5 sm:mx-2 text-white text-xs sm:text-sm md:text-base">/</span>
+            <span className="text-blue-300 text-xs sm:text-sm md:text-base">
               Services
             </span>
           </motion.div>

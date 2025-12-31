@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import AboutSection from "./AboutSection";
+import { useEnquiryModal } from "@/contexts/EnquiryModalContext";
 
 export default function HomePage() {
+  const { openModal } = useEnquiryModal();
+
   return (
     <>
       {/* Homepage Hero Section with Background */}
@@ -12,7 +15,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url(/backgroundHomepage.jpg)',
+            backgroundImage: 'url(/backgrounds/backgroundHomepage.jpg)',
             backgroundAttachment: 'fixed'
           }}
         />
@@ -51,15 +54,15 @@ export default function HomePage() {
               >
                 Explore Our Services
               </motion.a>
-              <motion.a
-                href="/contact"
-                className="bg-white text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center border border-gray-200 rounded-sm"
+              <motion.button
+                onClick={openModal}
+                className="bg-white text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center border border-gray-200 rounded-sm cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 Get a Free Quote
-              </motion.a>
+              </motion.button>
             </div> 
               </div>
             </div>

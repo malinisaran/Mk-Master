@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url(/backgroundHomepage.jpg)',
+            backgroundImage: 'url(/backgrounds/backgroundHomepage.jpg)',
             backgroundAttachment: 'scroll',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
