@@ -23,10 +23,14 @@ const features = [
   }
 ];
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  showLearnMore?: boolean;
+}
+
+export default function AboutSection({ showLearnMore = true }: AboutSectionProps) {
   return (
     <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left Column */}
           <motion.div
@@ -37,11 +41,11 @@ export default function AboutSection() {
             className="space-y-6 sm:space-y-8 md:space-y-10"
           >
             <div>
-              <div className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" style={{ color: '#04BDF1' }}>ABOUT US</div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight">
+              <div className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" style={{ color: '#04BDF1' }}>ABOUT US</div>
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight">
                 Your Trusted Partner In <span style={{ color: '#04BDF1' }}>Digital Transformation</span>
               </h3>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
                   Discover the insights you need to make confident decisions. From setup to support, we've simplified the answers for you.              </p>
             </div>
 
@@ -61,15 +65,17 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <Link 
-              href="/about"
-              className="text-white font-medium py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 lg:px-10 rounded-md transition-colors duration-200 text-xs sm:text-sm md:text-base lg:text-lg w-fit inline-block" 
-              style={{ backgroundColor: '#04BDF1' }} 
-              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'} 
-              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
-            >
-              Learn More
-            </Link>
+            {showLearnMore && (
+              <Link 
+                href="/about"
+                className="text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-200 text-sm mt-6 inline-block"
+                style={{ backgroundColor: '#04BDF1' }} 
+                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'} 
+                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
+              >
+                Learn More
+              </Link>
+            )}
           </motion.div>
 
           {/* Right Column */}

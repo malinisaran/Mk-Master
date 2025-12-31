@@ -13,8 +13,8 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { name: 'Home', path: '/', isHashLink: false },
-  { name: 'About Us', path: '#about', isHashLink: true },
-  { name: 'Services', path: '#services', isHashLink: true },
+  { name: 'About Us', path: '/about', isHashLink: false },
+  { name: 'Services', path: '/services', isHashLink: false },
   { name: 'Career', path: '/career', isHashLink: false },
   { name: 'Contact Us', path: '/contact', isHashLink: false }
 ];
@@ -34,11 +34,7 @@ export default function Navbar() {
 
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300  ${
-        scrolled 
-          ? 'bg-[#0F1B2D]/90 shadow-lg' 
-          : ''
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 transition-all duration-300 bg-[#0F1B2D] shadow-lg"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -100,8 +96,8 @@ export default function Navbar() {
         </div>
         
         {/* Enquiry Button - Right Aligned */}
-        <div className="hidden lg:block">
-          <button   className="w-full bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium mt-3 cursor-pointer">
+        <div className="hidden lg:flex items-center">
+          <button className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap">
             Enquiry Now
           </button>
         </div>

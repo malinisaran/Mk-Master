@@ -71,15 +71,14 @@ export default function Testimonials() {
   ].filter(Boolean);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 -mt-30 ml-5 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-8">
             <div className="flex-1">
               <motion.div 
-                className="inline-block px-3 py-1 rounded-md text-sm font-medium mb-4"
-                style={{ backgroundColor: '#FEECE7', color: '#CE0000' }}
+                className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -88,7 +87,7 @@ export default function Testimonials() {
               </motion.div>
 
               <motion.h2 
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -98,7 +97,7 @@ export default function Testimonials() {
               </motion.h2>
 
               <motion.p 
-                className="text-lg text-gray-600 max-w-2xl"
+                className="text-lg text-gray-600 mt-6 max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -112,18 +111,18 @@ export default function Testimonials() {
             <div className="flex items-center gap-3 mt-4 md:mt-0">
             <motion.button
                 onClick={handlePrevious}
-                whileHover={{ scale: 1.1, backgroundColor: '#FEECE7' }}
+                whileHover={{ scale: 1.1, backgroundColor: '#E6F7FF' }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#FEECE7] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#E6F7FF] flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Previous testimonials"
             >
                 <ChevronLeft className="w-5 h-5 text-gray-700" />
             </motion.button>
             <motion.button
                 onClick={handleNext}
-                whileHover={{ scale: 1.1, backgroundColor: '#FEECE7' }}
+                whileHover={{ scale: 1.1, backgroundColor: '#E6F7FF' }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#FEECE7] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 border border-gray-300 bg-white hover:bg-[#E6F7FF] flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Next testimonials"
             >
                 <ChevronRight className="w-5 h-5 text-gray-700" />
@@ -144,16 +143,16 @@ export default function Testimonials() {
   <div
     key={testimonial.id}
     className="group relative rounded-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg"
-    style={{ backgroundColor: '#FEECE7' }}
+    style={{ backgroundColor: '#E6F7FF' }}
   >
     {/* Red overlay on hover */}
-    <div className="absolute inset-0 bg-[#CE0000] rounded-xl opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-[#04BDF1] rounded-xl opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
     
     {/* Quote Icon */}
     <div className="mb-4">
       <svg
         className="w-12 h-12"
-        style={{ color: '#CE0000' }}
+        style={{ color: '#04BDF1' }}
         fill="currentColor"
         viewBox="0 0 24 24"
       >
@@ -191,7 +190,7 @@ export default function Testimonials() {
                   : 'w-2 h-2'
               } rounded-full`}
               style={{
-                backgroundColor: currentIndex === index ? '#CE0000' : '#D1D5DB'
+                backgroundColor: currentIndex === index ? '#04BDF1' : '#D1D5DB'
               }}
               aria-label={`Go to testimonial page ${index + 1}`}
             />

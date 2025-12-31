@@ -8,18 +8,21 @@ export default function HomePage() {
   return (
     <>
       {/* Homepage Hero Section with Background */}
-      <div className="h-[70vh] min-h-[500px] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] xl:h-[90vh] relative">
+      <div className="min-h-screen relative">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/backgroundHomepage.jpg)' }}
+          style={{ 
+            backgroundImage: 'url(/backgroundHomepage.jpg)',
+            backgroundAttachment: 'fixed'
+          }}
         />
         <div className="absolute inset-0 bg-black/40 z-[5]" />
-        <div className="relative z-10 h-full">
+          <div className="relative z-10 min-h-screen flex flex-col">
           <Navbar />
           
           {/* Main Content */}
-          <div className="flex flex-col h-full pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32">
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-6 md:py-8 lg:py-10 flex flex-col justify-center items-center flex-1">
+          <div className="flex-1 flex flex-col justify-center mt-32">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-6 md:py-8 lg:py-10 flex flex-col justify-center items-center">
               <div className="w-full max-w-2xl text-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
               <motion.h2 
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight px-2"
@@ -27,7 +30,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="text-[#F6D516]">Innovating</span> <span>Your Digital World</span>
+                <span className="text-[#F6D516]">Professional</span> <span>Website & Mobile App Development</span>
               </motion.h2>
 
               <motion.div 
@@ -35,8 +38,7 @@ export default function HomePage() {
               />
 
               <motion.p className="max-w-2xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed mx-auto px-2 sm:px-4">
-              We build websites, web apps, mobile apps, and e-commerce solutions to grow
-              your business.
+                We specialize in Custom Websites, E-commerce Solutions, Web Applications, Mobile Apps, and SEO Optimization to grow your business.
               </motion.p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center">

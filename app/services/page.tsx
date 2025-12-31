@@ -4,8 +4,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight, Code, Globe, Smartphone, Cloud, Network, Users, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Testimonials from "../home/Testimonials";
+import CallToAction from "../home/CallToAction";
 
 type ServiceCard = {
   title: string;
@@ -29,14 +32,16 @@ const services: ServiceCard[] = [
     title: "Web Application",
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Globe className="w-5 h-5" />,
-    hasImage: false,
+    hasImage: true,
+    imageSrc: "/combinedImge.jpg",
     details: "Build powerful web applications that drive business growth. We create responsive, user-friendly web solutions with modern frameworks and technologies that scale with your business."
   },
   {
     title: "Mobile Solutions",
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Smartphone className="w-5 h-5" />,
-    hasImage: false,
+    hasImage: true,
+    imageSrc: "/combinedImge.jpg",
     details: "Transform your business with native and cross-platform mobile applications. We deliver iOS and Android apps that provide exceptional user experiences and drive engagement."
   },
   {
@@ -51,14 +56,16 @@ const services: ServiceCard[] = [
     title: "System Integration",
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Network className="w-5 h-5" />,
-    hasImage: false,
+    hasImage: true,
+    imageSrc: "/combinedImge.jpg",
     details: "Seamlessly connect your business systems and applications. Our integration services ensure smooth data flow and process automation across your entire technology ecosystem."
   },
   {
     title: "IT Consulting",
     description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
     icon: <Users className="w-5 h-5" />,
-    hasImage: false,
+    hasImage: true,
+    imageSrc: "/combinedImge.jpg",
     details: "Get expert guidance on your technology strategy and implementation. Our consultants help you make informed decisions, optimize processes, and achieve your business objectives."
   }
 ];
@@ -74,11 +81,62 @@ export default function ServicesPage() {
     setSelectedService(null);
   };
 
+  const router = useRouter();
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <section className="py-16 sm:py-20 md:py-24 bg-gray-50">
+      {/* Hero Section with Background Image */}
+=      <div className="relative h-[60vh] min-h-[400px] flex flex-col justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url(/backgroundHomepage.jpg)',
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            transform: 'none !important',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Content */}
+        <div className="w-full h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 mt-25 relative z-10">
+          <motion.h1 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-[#F6D516] w-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Services
+          </motion.h1>
+          <motion.div 
+            className="flex items-center justify-center bg-black/50 px-6 py-2.5 rounded-full backdrop-blur-sm shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <span 
+              onClick={() => router.push('/')} 
+              className="text-white hover:text-blue-300 transition-colors cursor-pointer text-sm sm:text-base"
+            >
+              Home
+            </span>
+            <span className="mx-2 text-white">/</span>
+            <span className="text-blue-300 text-sm sm:text-base">
+              Services
+            </span>
+          </motion.div>
+        </div>
+      </div>
+      
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -87,7 +145,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Transform Your <span style={{ color: '#04BDF1' }}>Digital Future</span>
             </h1>
           </motion.div>
@@ -160,6 +218,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+      
+      {/* Call to Action Section */}
+      <CallToAction />
 
       {/* Modal */}
       <AnimatePresence>

@@ -3,7 +3,7 @@
 import HomePage from "./home/page";
 import ServicesSection from "./home/ServicesSection";
 import Technologies from "./home/Technologies";
-import TechnologyMarquee from "./home/TechnologyMarquee";
+// import TechnologyMarquee from "./home/TechnologyMarquee";
 import AboutSection from "./home/AboutSection";
 import Testimonials from "./home/Testimonials";
 import CallToAction from "./home/CallToAction";
@@ -25,7 +25,7 @@ export default function Home() {
       <Technologies />
       
       {/* Technology Marquee Section */}
-      <TechnologyMarquee />
+      {/* <TechnologyMarquee /> */}
       
       {/* Testimonials Section */}
       <Testimonials />

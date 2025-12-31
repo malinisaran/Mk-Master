@@ -32,28 +32,30 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className="py-16 -mt-25 ml-4 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             <motion.div 
-                className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-[#CE000040] text-[#CE0000]"
+                className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" 
+                style={{ color: '#04BDF1' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                >
+                transition={{ duration: 0.6 }}
+            >
                 OUR SERVICES
-                </motion.div>
+            </motion.div>
 
             <motion.h2 
-              className="text-4xl sm:text-5xl font-bold text-gray-900"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              We Provide <span style={{ color: '#CE0000' }}>Awesome Services</span>
+              We Provide <span style={{ color: '#04BDF1' }}>Awesome Services</span>
             </motion.h2>
 
             <motion.p 
@@ -76,7 +78,7 @@ export default function ServicesSection() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#CE0000' }}>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#04BDF1' }}>
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-base font-medium text-gray-800">{service.title}</h3>
@@ -93,9 +95,9 @@ export default function ServicesSection() {
               <Link
                 href="/services"
                 className="text-white font-medium py-2.5 px-6 rounded-md transition-colors duration-200 text-sm mt-6 inline-block"
-                style={{ backgroundColor: '#CE0000' }}
-                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#b30000'}
-                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#CE0000'}
+                style={{ backgroundColor: '#04BDF1' }}
+                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'}
+                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
               >
                 See More
               </Link>
@@ -103,22 +105,29 @@ export default function ServicesSection() {
           </div>
 
           {/* Right Column - Image */}
-          <motion.div 
-            className="relative h-[500px] w-full"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Image
-              src="/redlaptop.png"
-              alt="Laptop mockup showing our work"
-              fill
-              className="object-contain object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-          </motion.div>
+         <motion.div 
+  className="relative h-[500px] w-full"
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+>
+  <Image
+    src="/redlaptop.png"
+    alt="Laptop mockup showing our work"
+    fill
+    className="object-contain object-center"
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    priority
+  />
+
+  {/* BLUE COLOR OVERLAY */}
+  <div className="absolute inset-0 bg-[#04BDF1] mix-blend-color pointer-events-none"></div>
+
+  {/* OPTIONAL DEPTH ENHANCER */}
+  <div className="absolute inset-0 mix-blend-multiply opacity-70 pointer-events-none"></div>
+</motion.div>
+
         </div>
       </div>
     </section>

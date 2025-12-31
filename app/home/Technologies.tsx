@@ -106,12 +106,11 @@ export default function Technologies() {
   const [activeTab, setActiveTab] = useState<string>('UI/UX Design');
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 -mt-25 ml-4 bg-white">   
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-12">
           <motion.div 
-            className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
-            style={{ backgroundColor: '#CE000040', color: '#CE0000' }}
+            className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -120,13 +119,13 @@ export default function Technologies() {
           </motion.div>
 
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Technologies We <span style={{ color: '#CE0000' }}>Use</span>
+            Technologies We <span style={{ color: '#04BDF1' }}>Use</span>
           </motion.h2>
 
           <motion.p 
@@ -140,7 +139,7 @@ export default function Technologies() {
           </motion.p>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-12 -mt-10">
           <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-8 border-b border-gray-200 overflow-x-auto">
             {Object.keys(technologies).map((tab) => (
               <button
@@ -148,7 +147,7 @@ export default function Technologies() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-4 text-sm sm:text-base font-medium transition-all duration-300 relative cursor-pointer whitespace-nowrap ${
                   activeTab === tab
-                    ? 'text-[#CE0000]'
+                    ? 'text-[#04BDF1]'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -156,7 +155,7 @@ export default function Technologies() {
                 {activeTab === tab && (
                   <motion.div 
                     className="absolute bottom-0 left-0 right-0 h-1"
-                    style={{ backgroundColor: '#CE0000' }}
+                    style={{ backgroundColor: '#04BDF1' }}
                     layoutId="activeTab"
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                   />
@@ -178,7 +177,7 @@ export default function Technologies() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group bg-white rounded-xl border border-gray-100 hover:border-[#CE0000]/20 hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center justify-center min-h-[140px] cursor-pointer"
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#04BDF1]/20 hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center justify-center min-h-[140px] cursor-pointer"
               >
                 <div 
                   className="relative mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
@@ -195,7 +194,7 @@ export default function Technologies() {
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <span className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#CE0000] transition-colors duration-300">
+                <span className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#04BDF1] transition-colors duration-300">
                   {tech.name}
                 </span>
               </motion.div>
