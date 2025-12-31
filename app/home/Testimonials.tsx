@@ -71,11 +71,11 @@ export default function Testimonials() {
   ].filter(Boolean);
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 bg-white">
+    <section className="pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Header */}
-        <div className="mb-6 sm:mb-8 md:mb-12">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-6 sm:mb-8">
+        <div className="mb-4 sm:mb-6 md:mb-8">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-4 sm:mb-6">
             <div className="flex-1">
               <motion.div 
                 className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"

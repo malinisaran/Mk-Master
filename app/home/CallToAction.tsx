@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function CallToAction() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 text-white relative">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16 text-white relative">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/ctaimage.png)' }}

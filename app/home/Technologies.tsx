@@ -106,9 +106,9 @@ export default function Technologies() {
   const [activeTab, setActiveTab] = useState<string>('UI/UX Design');
 
   return (
-    <section className="py-16 -mt-25 ml-4 bg-white">   
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-left mb-12">
+    <section className="pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8 bg-white">   
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="text-left mb-3 sm:mb-4 md:mb-6">
           <motion.div 
             className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
             initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ export default function Technologies() {
           </motion.h2>
 
           <motion.p 
-            className="text-lg text-gray-600 max-w-2xl"
+            className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -139,8 +139,8 @@ export default function Technologies() {
           </motion.p>
         </div>
 
-        <div className="mb-12 -mt-10">
-          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-8 border-b border-gray-200 overflow-x-auto">
+        <div className="mb-0 sm:mb-2 md:mb-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 border-b border-gray-200 overflow-x-auto">
             {Object.keys(technologies).map((tab) => (
               <button
                 key={tab}
@@ -169,7 +169,7 @@ export default function Technologies() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 w-full"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 w-full"
           >
             {technologies[activeTab].map((tech, index) => (
               <motion.div 
@@ -177,7 +177,7 @@ export default function Technologies() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group bg-white rounded-xl border border-gray-100 hover:border-[#04BDF1]/20 hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center justify-center min-h-[140px] cursor-pointer"
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#04BDF1]/20 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] md:min-h-[140px] cursor-pointer"
               >
                 <div 
                   className="relative mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"

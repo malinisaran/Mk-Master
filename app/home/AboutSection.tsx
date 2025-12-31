@@ -29,7 +29,7 @@ interface AboutSectionProps {
 
 export default function AboutSection({ showLearnMore = true }: AboutSectionProps) {
   return (
-    <section id="about" className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 bg-white">
+    <section id="about" className="py-4 sm:py-6 md:py-8 lg:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column */}
