@@ -32,11 +32,11 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 -mt-25 ml-4 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="services" className="py-8 sm:py-12 md:py-16 mt-4 sm:mt-6 md:mt-8 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             <motion.div 
                 className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" 
                 style={{ color: '#04BDF1' }}
@@ -59,7 +59,7 @@ export default function ServicesSection() {
             </motion.h2>
 
             <motion.p 
-              className="text-lg text-gray-600"
+              className="text-sm sm:text-base md:text-lg text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function ServicesSection() {
               We offer a comprehensive suite of services to help your business thrive in the digital landscape.
             </motion.p>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4">
               {services.map((service, index) => (
                 <motion.li 
                   key={service.title}
@@ -81,7 +81,7 @@ export default function ServicesSection() {
                   <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#04BDF1' }}>
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-base font-medium text-gray-800">{service.title}</h3>
+                  <h3 className="text-sm sm:text-base font-medium text-gray-800">{service.title}</h3>
                 </motion.li>
               ))}
             </ul>
@@ -106,7 +106,7 @@ export default function ServicesSection() {
 
           {/* Right Column - Image */}
          <motion.div 
-  className="relative h-[500px] w-full"
+  className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full"
   initial={{ opacity: 0, scale: 0.95 }}
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ once: true }}
