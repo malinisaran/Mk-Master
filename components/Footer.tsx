@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-gray-900 py-12 sm:py-16 md:py-20 lg:py-24 w-full border-t-2 border-red-500">
+    <footer className="bg-white text-gray-900 py-12 sm:py-16 md:py-20 lg:py-24 w-full">
 
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="-ml-12 sm:-ml-16 md:-ml-20 lg:-ml-24 xl:-ml-28">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 sm:mb-6 md:mb-8 uppercase">Contact Us</h3>
             <ul className="space-y-4 sm:space-y-5">
 
@@ -81,7 +81,7 @@ export default function Footer() {
               <a className="text-sm sm:text-base text-blue-600 hover:underline cursor-pointer transition-colors">View larger map</a>
             </div>
 
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 rounded-lg overflow-hidden shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.01629331549!2d79.1559743153446!3d12.901206290900644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0x3ef1c5d1c2665e49!2sBangalore%20Main%20Rd%2C%20Athiyandhal%2C%20Tamil%20Nadu%20606704!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                 className="absolute inset-0 w-full h-full"
@@ -94,9 +94,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t-2 border-red-500 mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-10 md:pt-12">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-            <p className="text-sm sm:text-base md:text-lg text-gray-500 text-center sm:text-left">
+        <div className="border-t border-gray-200 mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-10 md:pt-12 relative">
+          <div className="flex flex-col items-center gap-4 sm:gap-6">
+            <p className="text-sm sm:text-base md:text-lg text-gray-500 text-center">
               © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved. Developed by ABG
             </p>
 

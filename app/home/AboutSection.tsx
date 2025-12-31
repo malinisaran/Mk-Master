@@ -124,9 +124,33 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
                               className="object-cover w-full h-full"
                             />
                           </div>
-                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-300 border-2 border-white"></div>
-                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-400 border-2 border-white"></div>
-                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-500 border-2 border-white"></div>
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
+                            <Image
+                              src="/logos/Group_client-e1761304644686.png"
+                              alt="Client"
+                              width={40}
+                              height={40}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
+                            <Image
+                              src="/logos/Group_client-e1761304644686.png"
+                              alt="Client"
+                              width={40}
+                              height={40}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
+                            <Image
+                              src="/logos/Group_client-e1761304644686.png"
+                              alt="Client"
+                              width={40}
+                              height={40}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
                         </div>
                         <div className="flex items-center space-x-1">
                           <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" style={{ color: '#04BDF1' }} />

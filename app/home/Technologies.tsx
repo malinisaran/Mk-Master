@@ -109,31 +109,7 @@ const technologies: TechnologiesType = {
     },
     { 
       name: 'Flutter', 
-      logo: '/technologies/flutter.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Swift', 
-      logo: '/technologies/swift.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Kotlin', 
-      logo: '/technologies/kotlin.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Ionic', 
-      logo: '/technologies/ionic.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Xamarin', 
-      logo: '/technologies/xamarin.webp',
+      logo: '/technologies/flutter.png',
       width: 60,
       height: 60
     }
@@ -141,40 +117,17 @@ const technologies: TechnologiesType = {
   'Digital Marketing': [
     { 
       name: 'SEO', 
-      logo: '/technologies/seo.webp',
+      logo: '/technologies/seo.jpg',
       width: 60,
       height: 60
     },
     { 
       name: 'Google Analytics', 
-      logo: '/technologies/google-analytics.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Social Media', 
-      logo: '/technologies/social-media.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Content Marketing', 
-      logo: '/technologies/content-marketing.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'Email Marketing', 
-      logo: '/technologies/email-marketing.webp',
-      width: 60,
-      height: 60
-    },
-    { 
-      name: 'PPC Advertising', 
-      logo: '/technologies/ppc-advertising.webp',
+      logo: '/technologies/analytics.png',
       width: 60,
       height: 60
     }
+
   ]
 };
 
