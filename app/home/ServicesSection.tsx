@@ -26,8 +26,8 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="pt-1 sm:pt-2 md:pt-3 pb-2 sm:pb-4 md:pb-6 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+    <section id="services" className="pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-10 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">

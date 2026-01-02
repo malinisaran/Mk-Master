@@ -135,8 +135,8 @@ export default function Technologies() {
   const [activeTab, setActiveTab] = useState<string>('UI/UX Design');
 
   return (
-    <section className="pt-1 sm:pt-2 md:pt-3 pb-2 sm:pb-4 md:pb-6 bg-white">   
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-10 bg-white">   
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="text-left mb-2 sm:mb-3 md:mb-4">
           <motion.div 
             className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"

@@ -8,10 +8,10 @@ export default function CallToAction() {
   const { openModal } = useEnquiryModal();
 
   return (
-    <section className="pt-2 sm:pt-4 md:pt-6 pb-6 sm:pb-8 md:pb-12 text-white relative">
+    <section className="pt-6 sm:pt-8 md:pt-10 pb-10 sm:pb-12 md:pb-16 text-white relative">
       <div className="absolute inset-0">
         <Image
-          src="/cta/ctaimage.png"
+          src="/cta/bluecta.jpg"
           alt="CTA background"
           fill
           className="object-cover"
@@ -19,7 +19,7 @@ export default function CallToAction() {
         />
       </div>
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="text-center">
           <motion.h2 
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"

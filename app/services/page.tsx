@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight, Code, Globe, Smartphone, Cloud, Network, Users, X } from "lucide-react";
+import { ArrowUpRight, Code, Globe, Smartphone, ShoppingCart, Palette, Megaphone, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,52 +21,52 @@ type ServiceCard = {
 
 const services: ServiceCard[] = [
   {
-    title: "Custom Development",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
+    title: "Web Development",
+    description: "Custom websites built with modern technologies for maximum performance and user experience",
     icon: <Code className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "We provide custom software development solutions tailored to your specific business needs. Our expert team builds scalable, secure, and high-performance applications using the latest technologies and best practices."
+    imageSrc: "/services/webdev.jpeg",
+    details: "We provide comprehensive web development services that transform your business online. Our expert team specializes in creating custom websites using cutting-edge technologies like React, Next.js, and modern CSS frameworks. We build responsive, fast-loading websites that work seamlessly across all devices. Our development process includes strategic planning, clean code architecture, SEO optimization, and rigorous testing to ensure your website performs at its best. Whether you need a simple business website or a complex web platform, we deliver solutions that drive results and enhance your digital presence."
   },
   {
-    title: "Web Application",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
-    icon: <Globe className="w-5 h-5" />,
-    hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "Build powerful web applications that drive business growth. We create responsive, user-friendly web solutions with modern frameworks and technologies that scale with your business."
-  },
-  {
-    title: "Mobile Solutions",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile apps for iOS and Android that engage users effectively",
     icon: <Smartphone className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "Transform your business with native and cross-platform mobile applications. We deliver iOS and Android apps that provide exceptional user experiences and drive engagement."
+    imageSrc: "/services/mobiledev.webp",
+    details: "Transform your business with powerful mobile applications that connect you with your customers on-the-go. We develop native iOS and Android apps using Swift, Kotlin, and cross-platform solutions with React Native and Flutter. Our mobile apps are designed for optimal performance, intuitive user interfaces, and seamless integration with backend systems. From concept to launch, we handle the entire development lifecycle including UI/UX design, API integration, push notifications, app store optimization, and post-launch maintenance. Our mobile solutions help businesses increase customer engagement, improve operational efficiency, and drive revenue growth."
   },
   {
-    title: "Cloud Services",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
-    icon: <Cloud className="w-5 h-5" />,
+    title: "Web Application Development",
+    description: "Scalable web applications that automate processes and streamline business operations",
+    icon: <Globe className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "Leverage the power of cloud computing with our comprehensive cloud services. We help you migrate, manage, and optimize your cloud infrastructure for maximum efficiency and cost savings."
+    imageSrc: "/services/webapplication.webp",
+    details: "Build powerful, scalable web applications that transform how your business operates. We create custom web applications using modern frameworks and technologies that handle complex business logic, real-time data processing, and multi-user interactions. Our web applications feature robust backend architectures, secure authentication systems, database management, and API integrations. We develop solutions for various needs including customer portals, admin dashboards, workflow management systems, and data analytics platforms. Every application is built with scalability in mind, ensuring it grows with your business while maintaining high performance and security standards."
   },
   {
-    title: "System Integration",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
-    icon: <Network className="w-5 h-5" />,
+    title: "E-Commerce Solutions",
+    description: "Complete online stores with secure payment processing and inventory management systems",
+    icon: <ShoppingCart className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "Seamlessly connect your business systems and applications. Our integration services ensure smooth data flow and process automation across your entire technology ecosystem."
+    imageSrc: "/services/ecommercesolu.jpg",
+    details: "Launch your online store with our comprehensive e-commerce solutions that drive sales and enhance customer experience. We build secure, scalable e-commerce platforms with seamless payment gateway integration, shopping cart functionality, and order management systems. Our e-commerce solutions include product catalog management, inventory tracking, customer accounts, reviews and ratings, and multi-currency support. We integrate popular payment methods, shipping calculators, and tax calculations to provide a complete shopping experience. From small online shops to large enterprise marketplaces, we create e-commerce platforms that convert visitors into customers and maximize your online revenue potential."
   },
   {
-    title: "IT Consulting",
-    description: "Efficitur habitasse sociosqu senectus platea sem dictum pretium nullam",
-    icon: <Users className="w-5 h-5" />,
+    title: "UI/UX Design",
+    description: "User-centered designs that create intuitive and visually appealing digital experiences",
+    icon: <Palette className="w-5 h-5" />,
     hasImage: true,
-    imageSrc: "/services/combinedImge.jpg",
-    details: "Get expert guidance on your technology strategy and implementation. Our consultants help you make informed decisions, optimize processes, and achieve your business objectives."
+    imageSrc: "/services/uiux.avif",
+    details: "Create exceptional user experiences with our professional UI/UX design services. Our design team combines creativity with user research to deliver interfaces that are both beautiful and functional. We follow a comprehensive design process that includes user research, wireframing, prototyping, and user testing to ensure your design meets user needs and business goals. Our designs prioritize usability, accessibility, and visual appeal across all devices and platforms. We create design systems, style guides, and interactive prototypes that guide development teams. From initial concepts to final designs, we ensure every interaction is thoughtfully designed to enhance user satisfaction and drive engagement."
+  },
+  {
+    title: "Digital Marketing",
+    description: "Strategic marketing campaigns that increase brand visibility and drive qualified leads",
+    icon: <Megaphone className="w-5 h-5" />,
+    hasImage: true,
+    imageSrc: "/services/digitalmarketig.jpg",
+    details: "Grow your online presence and reach your target audience with our comprehensive digital marketing services. We develop and execute strategic marketing campaigns that include SEO optimization, social media management, content marketing, pay-per-click advertising, and email marketing. Our data-driven approach ensures every campaign is optimized for maximum ROI. We conduct thorough market research, competitor analysis, and audience segmentation to create targeted campaigns that resonate with your customers. Our services include Google Ads management, Facebook and Instagram advertising, LinkedIn marketing, content creation, blog writing, and marketing analytics. We help businesses build their brand, increase website traffic, generate leads, and convert prospects into customers through proven digital marketing strategies."
   }
 ];
 
@@ -133,8 +133,8 @@ export default function ServicesPage() {
         </div>
       </div>
       
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-14 sm:py-16 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -294,7 +294,7 @@ export default function ServicesPage() {
                   
                   <button
                     onClick={closeModal}
-                    className="text-white font-medium py-3 px-8 rounded-md transition-colors duration-200 text-sm sm:text-base"
+                    className="text-white font-medium py-3 px-8 cursor-pointer rounded-md transition-colors duration-200 text-sm sm:text-base"
                     style={{ backgroundColor: '#04BDF1' }}
                     onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'}
                     onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}

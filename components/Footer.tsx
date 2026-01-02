@@ -7,15 +7,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-gray-900 py-4 sm:py-5 md:py-6 w-full">
+    <footer className="bg-white text-gray-900 py-6 sm:py-8 md:py-10 w-full">
 
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
 
         {/* 4 Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
 
           {/* Logo */}
-          <div>
+          <div className="flex justify-center md:justify-start">
             <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative">
               <Image 
                 src="/logos/CompanyLogo.png"
@@ -28,11 +28,11 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 uppercase">Quick Links</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {['Home','About Us','Services','Career','Contact'].map((item) => (
-                <li key={item} className="flex items-center">
+                <li key={item} className="flex items-center justify-center md:justify-start">
                   <FaArrowRight className="text-red-500 mr-2 text-xs sm:text-sm" />
                   <span className="text-sm sm:text-base text-gray-600 hover:text-red-500 cursor-pointer transition-colors">
                     {item}
@@ -43,30 +43,30 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="-ml-12 sm:-ml-16 md:-ml-20 lg:-ml-24 xl:-ml-28">
+          <div className="text-center md:text-left">
             <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 uppercase">Contact Us</h3>
             <ul className="space-y-2 sm:space-y-2.5">
 
-              <li className="flex items-start">
+              <li className="flex items-start justify-center md:justify-start">
                 <FaMapMarkerAlt className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-600">
+                <span className="text-sm sm:text-base text-gray-600 text-left">
                   426, 2nd floor, Bangalore main road,<br/>
                   Athiyandhal village,<br/>
                   Thiruvannamalai.
                 </span>
               </li>
 
-              <li className="flex items-start">
+              <li className="flex items-start justify-center md:justify-start">
                 <FaPhone className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <div className="flex flex-col space-y-0.5">
+                <div className="flex flex-col space-y-0.5 items-center md:items-start">
                   <a href="tel:+918903742055" className="text-sm sm:text-base text-gray-600 hover:text-red-500 transition-colors">+91 8903742055</a>
                   <a href="tel:+919486501302" className="text-sm sm:text-base text-gray-600 hover:text-red-500 transition-colors">+91 9486501302</a>
                 </div>
               </li>
 
-              <li className="flex items-start">
+              <li className="flex items-start justify-center md:justify-start">
                 <FaEnvelope className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-gray-600 hover:text-red-500 break-all transition-colors">
+                <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-gray-600 hover:text-red-500 break-words transition-colors text-left">
                   info@manokarkannandynamictechnology.com
                 </a>
               </li>
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Location */}
           <div>
-            <div className="flex justify-between items-center mb-2 sm:mb-3">
+            <div className="flex flex-col sm:flex-row justify-between items-center sm:items-center mb-2 sm:mb-3 gap-2 sm:gap-0">
               <h3 className="text-base sm:text-lg font-bold uppercase">Our Location</h3>
               <a className="text-xs sm:text-sm text-blue-600 hover:underline cursor-pointer transition-colors">View larger map</a>
             </div>
@@ -95,9 +95,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 relative">
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2">
-            <p className="text-xs sm:text-sm text-gray-500 text-center">
-              © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved. Developed by ABG
+          <div className="flex flex-col items-center gap-1.5 sm:gap-2 px-2">
+            <p className="text-xs sm:text-sm text-gray-500 text-center leading-relaxed">
+              © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved.<span className="block sm:inline"> Developed by ABG</span>
             </p>
 
             <button 

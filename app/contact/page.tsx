@@ -59,8 +59,8 @@ export default function ContactPage() {
         </div>
       </div>
       
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <section className="py-8 sm:py-10 md:py-14 lg:py-16 xl:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Contact Information - Left Side */}
             <motion.div

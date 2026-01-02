@@ -25,18 +25,21 @@ const features = [
 
 interface AboutSectionProps {
   showLearnMore?: boolean;
+  animateOnMount?: boolean;
 }
 
-export default function AboutSection({ showLearnMore = true }: AboutSectionProps) {
+export default function AboutSection({ showLearnMore = true, animateOnMount = false }: AboutSectionProps) {
   return (
-    <section id="about" className="py-2 sm:py-4 md:py-6 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+    <section id="about" className="py-6 sm:py-8 md:py-10 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            {...(animateOnMount 
+              ? { animate: { opacity: 1, x: 0 } }
+              : { whileInView: { opacity: 1, x: 0 }, viewport: { once: true } }
+            )}
             transition={{ duration: 0.6 }}
             className="space-y-4 sm:space-y-6 md:space-y-8"
           >
@@ -81,8 +84,10 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
           {/* Right Column */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            {...(animateOnMount 
+              ? { animate: { opacity: 1, x: 0 } }
+              : { whileInView: { opacity: 1, x: 0 }, viewport: { once: true } }
+            )}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 items-stretch w-full"
           >
