@@ -109,7 +109,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" />
                     <span className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">
-                      13+ Years of Quality Experience
+                      Quality Experience
                     </span>
                   </div>
                 </motion.div>
