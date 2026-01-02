@@ -70,7 +70,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
               className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-full"
             >
               <div className="relative w-full h-full rounded-lg overflow-hidden">
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
                   className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white rounded-lg px-4 py-3 sm:px-5 sm:py-4 shadow-lg border-2"
                   style={{ borderColor: '#F6D516' }}
                 >
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.5 }}
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:bottom-6 bg-white rounded-lg px-4 py-3 sm:px-5 sm:py-4 shadow-lg border-2"
                   style={{ borderColor: '#F6D516' }}
                 >
@@ -141,7 +141,7 @@ export default function AboutPage() {
                       Our Vision
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                      To be the "partner of choice" for customers striving to get the edge in the highly competitive business environment by providing the most innovative solutions to enhance their productivity in terms of increasing sales and saving time.
+                      To empower businesses and individuals through innovative, reliable, and scalable technology that simplifies complexity and drives digital growth.
                     </p>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export default function AboutPage() {
                       Our Mission
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                      To provide clever and innovative business solutions to fulfill the business needs of customers all over the world.
+                      Our mission is to deliver innovative, secure, and scalable IT solutions that help businesses optimize operations, enhance productivity, and achieve sustainable growth.
                     </p>
                   </div>
                 </div>

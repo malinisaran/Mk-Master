@@ -192,7 +192,7 @@ export default function Technologies() {
                     className="absolute bottom-0 left-0 right-0 h-1"
                     style={{ backgroundColor: '#04BDF1' }}
                     layoutId="activeTab"
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                   />
                 )}
               </button>
@@ -203,7 +203,7 @@ export default function Technologies() {
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 w-full"
           >
             {technologies[activeTab].map((tech, index) => (
@@ -211,11 +211,11 @@ export default function Technologies() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group bg-white rounded-xl border border-gray-100 hover:border-[#04BDF1]/20 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] md:min-h-[140px] cursor-pointer"
+                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: index * 0.05 }}
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#04BDF1]/20 hover:shadow-lg transition-all duration-300 ease-out p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] md:min-h-[140px] cursor-pointer"
               >
                 <div 
-                  className="relative mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                  className="relative mb-4 flex items-center justify-center transition-all duration-300 ease-out group-hover:scale-110"
                   style={{ 
                     width: '60px',
                     height: '60px'
@@ -229,7 +229,7 @@ export default function Technologies() {
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <span className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#04BDF1] transition-colors duration-300">
+                <span className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#04BDF1] transition-all duration-300 ease-out">
                   {tech.name}
                 </span>
               </motion.div>

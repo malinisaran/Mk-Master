@@ -26,7 +26,7 @@ export default function CallToAction() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
             Ready to grow your business digitally?
           </motion.h2>
@@ -36,7 +36,7 @@ export default function CallToAction() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
           >
             Contact Manokar Kannan Dynamic Technology today and start your digital journey with confidence
           </motion.p>
@@ -46,11 +46,11 @@ export default function CallToAction() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
           >
             <button
               onClick={openModal}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center justify-center cursor-pointer"
+                    className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-all duration-300 ease-out inline-flex items-center justify-center cursor-pointer"
             >
               Contact Us
               <svg

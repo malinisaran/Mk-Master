@@ -62,7 +62,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
                     className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6"
                   >
                     <h2 
@@ -96,19 +96,19 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center">
                   <motion.a
                     href="/services"
-                    className="bg-[#F6D516] text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center rounded-sm"
+                    className="bg-[#F6D516] text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition-all duration-300 ease-out text-center rounded-sm"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
                   >
                     Explore Our Services
                   </motion.a>
                   <motion.button
                     onClick={openModal}
-                    className="bg-white text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition text-center border border-gray-200 rounded-sm cursor-pointer"
+                    className="bg-white text-black font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base hover:scale-105 transition-all duration-300 ease-out text-center border border-gray-200 rounded-sm cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
                   >
                     Get a Free Quote
                   </motion.button>

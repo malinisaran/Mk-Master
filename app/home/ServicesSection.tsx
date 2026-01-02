@@ -37,7 +37,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
             >
               OUR SERVICES
             </motion.div>
@@ -47,7 +47,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
             >
               We Provide <span style={{ color: '#04BDF1' }}>Awesome Services</span>
             </motion.h2>
@@ -57,7 +57,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
             >
               We offer a comprehensive suite of services to help your business thrive in the digital landscape.
             </motion.p>
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: index * 0.1 }}
                 >
                   <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#04BDF1' }}>
                     <CheckCircle className="w-4 h-4 text-white" />
@@ -84,7 +84,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
             >
               <Link
                 href="/services"

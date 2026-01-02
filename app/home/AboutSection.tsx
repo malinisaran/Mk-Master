@@ -40,7 +40,7 @@ export default function AboutSection({ showLearnMore = true, animateOnMount = fa
               ? { animate: { opacity: 1, x: 0 } }
               : { whileInView: { opacity: 1, x: 0 }, viewport: { once: true } }
             )}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
             className="space-y-4 sm:space-y-6 md:space-y-8"
           >
             <div>
@@ -88,7 +88,7 @@ export default function AboutSection({ showLearnMore = true, animateOnMount = fa
               ? { animate: { opacity: 1, x: 0 } }
               : { whileInView: { opacity: 1, x: 0 }, viewport: { once: true } }
             )}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
             className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 items-stretch w-full"
           >
             {/* Left Side - Combined Image */}

@@ -136,7 +136,7 @@ export default function Testimonials() {
           key={currentIndex}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8"
         >
           {visibleTestimonials.map((testimonial, index) => (
@@ -146,7 +146,7 @@ export default function Testimonials() {
     style={{ backgroundColor: '#E6F7FF' }}
   >
     {/* Red overlay on hover */}
-    <div className="absolute inset-0 bg-[#04BDF1] rounded-xl opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-[#04BDF1] rounded-xl opacity-0 group-hover:opacity-5 transition-all duration-300 ease-out" />
     
     {/* Quote Icon */}
     <div className="mb-4">
@@ -161,17 +161,17 @@ export default function Testimonials() {
     </div>
 
     {/* Main Quote */}
-    <p className="relative text-base sm:text-lg font-bold text-gray-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+    <p className="relative text-base sm:text-lg font-bold text-gray-900 mb-4 group-hover:translate-x-1 transition-all duration-300 ease-out">
       {testimonial.mainQuote}
     </p>
 
     {/* Supporting Text */}
-    <p className="relative text-sm sm:text-base text-gray-700 mb-6 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">
+    <p className="relative text-sm sm:text-base text-gray-700 mb-6 leading-relaxed group-hover:translate-x-1 transition-all duration-300 ease-out">
       {testimonial.supportingText}
     </p>
 
     {/* Client Info */}
-    <p className="relative text-sm sm:text-base text-gray-800 italic group-hover:translate-x-1 transition-transform duration-300">
+    <p className="relative text-sm sm:text-base text-gray-800 italic group-hover:translate-x-1 transition-all duration-300 ease-out">
       {testimonial.name}, {testimonial.role}
     </p>
   </div>
