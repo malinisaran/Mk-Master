@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AboutSection from "./AboutSection";
 import { useEnquiryModal } from "@/contexts/EnquiryModalContext";
@@ -12,13 +13,16 @@ export default function HomePage() {
     <>
       {/* Homepage Hero Section with Background */}
       <div className="min-h-screen relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url(/backgrounds/backgroundHomepage.jpg)',
-            backgroundAttachment: 'fixed'
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/backgrounds/backgroundHomepage.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/40 z-[5]" />
           <div className="relative z-10 min-h-screen flex flex-col">
           <Navbar />

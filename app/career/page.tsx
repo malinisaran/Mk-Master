@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,18 +15,16 @@ export default function CareerPage() {
       {/* Hero Section with Background Image */}
       <div className="relative h-[40vh] min-h-[250px] sm:h-[45vh] sm:min-h-[300px] md:h-[50vh] md:min-h-[350px] lg:h-[60vh] lg:min-h-[400px] flex flex-col justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url(/backgrounds/backgroundHomepage.jpg)',
-            backgroundAttachment: 'scroll',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/backgrounds/backgroundHomepage.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />
         

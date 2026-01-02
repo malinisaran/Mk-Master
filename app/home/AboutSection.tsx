@@ -103,10 +103,16 @@ export default function AboutSection({ showLearnMore = true }: AboutSectionProps
             <div className="relative flex-1 w-full lg:w-auto flex flex-col justify-between h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]">
               {/* Happy Clients and More Review Section with Rocket Background */}
               <div className="relative rounded-lg shadow-xl overflow-hidden mb-3 sm:mb-4 md:mb-5  flex-1 min-h-0">
-                <div 
-                  className="relative bg-cover bg-center bg-no-repeat p-3 sm:p-4 md:p-5 lg:p-6 h-full"
-                  style={{ backgroundImage: 'url(/services/rocket.jpg)' }}
-                >
+                <div className="relative p-3 sm:p-4 md:p-5 lg:p-6 h-full">
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/services/rocket.jpg"
+                      alt="Rocket background"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
                   {/* Overlay for better text readability */}
                   <div className="absolute inset-0 bg-white/70"></div>
                   

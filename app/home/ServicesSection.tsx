@@ -8,25 +8,19 @@ const services = [
     title: "Web Development"
   },
   {
-    title: "Mobile Application"
+    title: "Mobile App Development"
   },
   {
-    title: "Cloud Computing"
+    title: "Web Application Development"
   },
   {
-    title: "Data Analytics"
+    title: "E-Commerce Solutions"
   },
   {
-    title: "Artificial Intelligence"
+    title: "UI/UX Design"
   },
   {
-    title: "Cyber Security"
-  },
-  {
-    title: "Software Integration"
-  },
-  {
-    title: "IT Consulting"
+    title: "Digital Marketing"
   }
 ];
 
@@ -37,18 +31,18 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
-            <motion.div 
-                className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" 
-                style={{ color: '#04BDF1' }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+            <motion.div
+              className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4"
+              style={{ color: '#04BDF1' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-                OUR SERVICES
+              OUR SERVICES
             </motion.div>
 
-            <motion.h2 
+            <motion.h2
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +52,7 @@ export default function ServicesSection() {
               We Provide <span style={{ color: '#04BDF1' }}>Awesome Services</span>
             </motion.h2>
 
-            <motion.p 
+            <motion.p
               className="text-sm sm:text-base md:text-lg text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +64,7 @@ export default function ServicesSection() {
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4">
               {services.map((service, index) => (
-                <motion.li 
+                <motion.li
                   key={service.title}
                   className="flex items-center space-x-3"
                   initial={{ opacity: 0, x: -20 }}
@@ -105,28 +99,28 @@ export default function ServicesSection() {
           </div>
 
           {/* Right Column - Image */}
-         <motion.div 
-  className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full"
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.5, delay: 0.2 }}
->
-  <Image
-    src="/services/redlaptop.png"
-    alt="Laptop mockup showing our work"
-    fill
-    className="object-contain object-center"
-    sizes="(max-width: 1024px) 100vw, 50vw"
-    priority
-  />
+          <motion.div
+            className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Image
+              src="/services/redlaptop.png"
+              alt="Laptop mockup showing our work"
+              fill
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
 
-  {/* BLUE COLOR OVERLAY */}
-  <div className="absolute inset-0 bg-[#04BDF1] mix-blend-color pointer-events-none"></div>
+            {/* BLUE COLOR OVERLAY */}
+            <div className="absolute inset-0 bg-[#04BDF1] mix-blend-color pointer-events-none"></div>
 
-  {/* OPTIONAL DEPTH ENHANCER */}
-  <div className="absolute inset-0 mix-blend-multiply opacity-70 pointer-events-none"></div>
-</motion.div>
+            {/* OPTIONAL DEPTH ENHANCER */}
+            <div className="absolute inset-0 mix-blend-multiply opacity-70 pointer-events-none"></div>
+          </motion.div>
 
         </div>
       </div>

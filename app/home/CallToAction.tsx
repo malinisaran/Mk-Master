@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEnquiryModal } from '@/contexts/EnquiryModalContext';
 
 export default function CallToAction() {
@@ -8,10 +9,15 @@ export default function CallToAction() {
 
   return (
     <section className="pt-2 sm:pt-4 md:pt-6 pb-6 sm:pb-8 md:pb-12 text-white relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/cta/ctaimage.png)' }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/cta/ctaimage.png"
+          alt="CTA background"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="text-center">

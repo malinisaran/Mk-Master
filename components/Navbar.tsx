@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEnquiryModal } from "@/contexts/EnquiryModalContext";
 
@@ -24,6 +25,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { openModal } = useEnquiryModal();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,12 +63,17 @@ export default function Navbar() {
           <div className="bg-white/10 backdrop-blur-md  rounded-full px-8 py-3">
             <div className="flex items-center space-x-8">
               {navItems.map((item) => {
+                const isActive = pathname === item.path;
                 if (item.isHashLink) {
                   return (
                     <a
                       key={item.name}
                       href={item.path}
-                      className="text-white hover:text-blue-300 text-sm font-medium transition-colors cursor-pointer"
+                      className={`text-sm font-medium transition-colors cursor-pointer ${
+                        isActive 
+                          ? 'text-blue-300 font-semibold underline underline-offset-4' 
+                          : 'text-white hover:text-blue-300'
+                      }`}
                       onClick={(e) => {
                         if (window.location.pathname === '/') {
                           e.preventDefault();
@@ -87,7 +94,11 @@ export default function Navbar() {
                   <Link 
                     key={item.name}
                     href={item.path}
-                    className="text-white hover:text-blue-300 text-sm font-medium transition-colors"
+                    className={`text-sm font-medium transition-colors ${
+                      isActive 
+                        ? 'text-blue-300 font-semibold underline underline-offset-4' 
+                        : 'text-white hover:text-blue-300'
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -103,7 +114,7 @@ export default function Navbar() {
             onClick={openModal}
             className="bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap cursor-pointer"
           >
-            Enquiry Now
+            Enquire Now
           </button>
         </div>
 
@@ -134,12 +145,17 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <div className="px-6 py-4 space-y-3">
-              {navItems.map((item) => (
-                item.isHashLink ? (
+              {navItems.map((item) => {
+                const isActive = pathname === item.path;
+                return item.isHashLink ? (
                   <a
                     key={item.name}
                     href={item.path}
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isActive
+                        ? 'bg-gray-700 text-white font-semibold'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`}
                     onClick={(e) => {
                       setMobileMenuOpen(false);
                       if (window.location.pathname === '/') {
@@ -157,13 +173,17 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.path}
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isActive
+                        ? 'bg-gray-700 text-white font-semibold'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
-                )
-              ))}
+                );
+              })}
               <button 
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -171,7 +191,7 @@ export default function Navbar() {
                 }}
                 className="w-full  bg-[#04BDF1] hover:bg-[#03a8d8] text-white py-2 px-4 rounded-full text-sm font-medium mt-3 cursor-pointer"
               >
-                Enquiry Now
+                Enquire Now
               </button>
             </div>
           </motion.div>
