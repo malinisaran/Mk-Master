@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight, Code, Globe, Smartphone, ShoppingCart, Palette, Megaphone, X } from "lucide-react";
@@ -83,6 +83,24 @@ export default function ServicesPage() {
     setSelectedService(null);
     setShowEnquiryForm(false);
   };
+
+  useEffect(() => {
+    if (selectedService) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [selectedService]);
 
   const router = useRouter();
   
@@ -246,9 +264,15 @@ export default function ServicesPage() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className={`bg-white rounded-2xl shadow-2xl ${showEnquiryForm ? 'max-w-6xl' : 'max-w-2xl'} w-full max-h-[90vh] overflow-hidden flex flex-col`}>
+              <div 
+                className={`bg-white rounded-2xl shadow-2xl ${showEnquiryForm ? 'max-w-6xl' : 'max-w-2xl'} w-full overflow-hidden flex flex-col transition-all duration-300 ease-out ${
+                  showEnquiryForm 
+                    ? 'h-[95vh] sm:h-[90vh] md:h-[85vh]' 
+                    : 'max-h-[90vh] sm:max-h-[85vh]'
+                }`}
+              >
                 {/* Modal Header */}
-                <div className="relative p-6 sm:p-8 border-b border-gray-200 flex-shrink-0">
+                <div className="relative p-4 sm:p-6 border-b border-gray-200 flex-shrink-0">
                   {/* Background Image or Color for Header */}
                   {selectedService.hasImage && selectedService.imageSrc ? (
                     <div className="absolute inset-0 rounded-t-2xl overflow-hidden">
@@ -269,13 +293,13 @@ export default function ServicesPage() {
                   
                   <div className="relative z-10 flex items-start justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center border-2 shadow-md" style={{ borderColor: '#04BDF1' }}>
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center border-2 shadow-md" style={{ borderColor: '#04BDF1' }}>
                         <div style={{ color: '#04BDF1' }}>
                           {selectedService.icon}
                         </div>
                       </div>
                       <div>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                           {selectedService.title}
                         </h2>
                       </div>
@@ -291,34 +315,36 @@ export default function ServicesPage() {
 
                 {/* Modal Body - Split Layout when form is shown */}
                 {showEnquiryForm ? (
-                  <div className="flex-1 overflow-hidden flex flex-col md:flex-row">
+                  <div className={`flex-1 overflow-hidden flex flex-col ${showEnquiryForm ? 'md:flex-row' : ''} min-h-0`}>
                     {/* Left Side - Content */}
-                    <div className="flex-1 p-6 sm:p-8 overflow-y-auto border-r border-gray-200">
+                    <div className="flex-1 p-4 sm:p-6 overflow-y-auto border-r-0 md:border-r border-gray-200 min-h-0">
                       <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                         {selectedService.details}
                       </p>
                     </div>
                     
                     {/* Right Side - Form */}
-                    <div className="flex-1 p-6 sm:p-8 overflow-hidden flex flex-col">
-                      <div className="flex-1 min-h-0">
+                    <div className="flex-1 p-4 sm:p-6 overflow-hidden flex flex-col min-h-0 border-t md:border-t-0 border-gray-200">
+                      <div className="flex-1 w-full h-full">
                         <iframe
                           aria-label="Enquiry Form"
                           frameBorder="0"
                           style={{
                             height: '100%',
                             width: '100%',
-                            border: 'none'
+                            border: 'none',
+                            display: 'block'
                           }}
                           src="https://forms.zohopublic.in/manoharkannandynamictechnolog1/form/EnquiryForm/formperma/_BdnILSWlUMVcE0dg9DaGLhYZXSmUHVllIzxQ_ZPJ1U"
                           className="w-full h-full rounded-lg"
                           allow="fullscreen"
+                          scrolling="yes"
                         />
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <div className="flex-1 p-6 sm:p-8 overflow-y-auto">
+                  <div className="p-6 sm:p-8 overflow-y-auto">
                     <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6">
                       {selectedService.details}
                     </p>
