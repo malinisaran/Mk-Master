@@ -240,7 +240,7 @@ export default function AboutPage() {
             >
               <div className="relative w-full h-full rounded-lg overflow-hidden">
                 <Image
-                  src="/about/office2.jpg"
+                  src="/about/office3.jpeg"
                   alt="Office environment"
                   fill
                   className="object-cover"
