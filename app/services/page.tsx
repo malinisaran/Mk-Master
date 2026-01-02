@@ -72,13 +72,16 @@ const services: ServiceCard[] = [
 
 export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<ServiceCard | null>(null);
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
 
   const openModal = (service: ServiceCard) => {
     setSelectedService(service);
+    setShowEnquiryForm(false);
   };
 
   const closeModal = () => {
     setSelectedService(null);
+    setShowEnquiryForm(false);
   };
 
   const router = useRouter();
@@ -134,7 +137,7 @@ export default function ServicesPage() {
       </div>
       
       <section className="py-14 sm:py-16 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-10">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +204,7 @@ export default function ServicesPage() {
                       </div>
 
                       {/* Title and Description */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
                         {service.title}
                       </h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -243,9 +246,9 @@ export default function ServicesPage() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <div className={`bg-white rounded-2xl shadow-2xl ${showEnquiryForm ? 'max-w-6xl' : 'max-w-2xl'} w-full max-h-[90vh] overflow-hidden flex flex-col`}>
                 {/* Modal Header */}
-                <div className="relative p-6 sm:p-8 border-b border-gray-200">
+                <div className="relative p-6 sm:p-8 border-b border-gray-200 flex-shrink-0">
                   {/* Background Image or Color for Header */}
                   {selectedService.hasImage && selectedService.imageSrc ? (
                     <div className="absolute inset-0 rounded-t-2xl overflow-hidden">
@@ -272,36 +275,65 @@ export default function ServicesPage() {
                         </div>
                       </div>
                       <div>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
                           {selectedService.title}
                         </h2>
                       </div>
                     </div>
                     <button
                       onClick={closeModal}
-                      className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200"
+                      className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200 cursor-pointer"
                     >
                       <X className="w-5 h-5 text-gray-600" />
                     </button>
                   </div>
                 </div>
 
-                {/* Modal Body */}
-                <div className="p-6 sm:p-8">
-                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
-                    {selectedService.details}
-                  </p>
-                  
-                  <button
-                    onClick={closeModal}
-                    className="text-white font-medium py-3 px-8 cursor-pointer rounded-md transition-colors duration-200 text-sm sm:text-base"
-                    style={{ backgroundColor: '#04BDF1' }}
-                    onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'}
-                    onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
-                  >
-                    Close
-                  </button>
-                </div>
+                {/* Modal Body - Split Layout when form is shown */}
+                {showEnquiryForm ? (
+                  <div className="flex-1 overflow-hidden flex flex-col md:flex-row">
+                    {/* Left Side - Content */}
+                    <div className="flex-1 p-6 sm:p-8 overflow-y-auto border-r border-gray-200">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                        {selectedService.details}
+                      </p>
+                    </div>
+                    
+                    {/* Right Side - Form */}
+                    <div className="flex-1 p-6 sm:p-8 overflow-hidden flex flex-col">
+                      <div className="flex-1 min-h-0">
+                        <iframe
+                          aria-label="Enquiry Form"
+                          frameBorder="0"
+                          style={{
+                            height: '100%',
+                            width: '100%',
+                            border: 'none'
+                          }}
+                          src="https://forms.zohopublic.in/manoharkannandynamictechnolog1/form/EnquiryForm/formperma/_BdnILSWlUMVcE0dg9DaGLhYZXSmUHVllIzxQ_ZPJ1U"
+                          className="w-full h-full rounded-lg"
+                          allow="fullscreen"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex-1 p-6 sm:p-8 overflow-y-auto">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+                      {selectedService.details}
+                    </p>
+                    
+                    <button
+                      onClick={() => setShowEnquiryForm(true)}
+                      className="text-white font-medium py-3 px-8 cursor-pointer rounded-md transition-colors duration-200 text-sm sm:text-base"
+                      style={{ backgroundColor: '#04BDF1' }}
+                      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#03a8d8'}
+                      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.backgroundColor = '#04BDF1'}
+                    >
+                      Enquire Now
+                    </button>
+                  </div>
+                )}
               </div>
             </motion.div>
           </>

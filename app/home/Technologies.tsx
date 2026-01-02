@@ -136,7 +136,7 @@ export default function Technologies() {
 
   return (
     <section className="pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-10 bg-white">   
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
+      <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="text-left mb-2 sm:mb-3 md:mb-4">
           <motion.div 
             className="inline-block text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 text-[#04BDF1]"
@@ -148,7 +148,7 @@ export default function Technologies() {
           </motion.div>
 
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

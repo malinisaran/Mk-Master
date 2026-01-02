@@ -59,10 +59,10 @@ export default function CareerPage() {
       </div>
       
       <section className="py-8 sm:py-10 md:py-14 lg:py-16 xl:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+        <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
           <div className="text-center py-8 sm:py-12">
             <div className="max-w-2xl mx-auto space-y-4">
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
+              <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6">
                 Currently, we don't have any open positions at this time.
               </p>
   

@@ -27,7 +27,7 @@ const services = [
 export default function ServicesSection() {
   return (
     <section id="services" className="pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
+      <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
@@ -43,7 +43,7 @@ export default function ServicesSection() {
             </motion.div>
 
             <motion.h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

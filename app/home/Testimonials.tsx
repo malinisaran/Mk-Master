@@ -72,7 +72,7 @@ export default function Testimonials() {
 
   return (
     <section className="pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
+      <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         {/* Header */}
         <div className="mb-3 sm:mb-4 md:mb-6">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-8 mb-3 sm:mb-4">
@@ -87,7 +87,7 @@ export default function Testimonials() {
               </motion.div>
 
               <motion.h2 
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -97,7 +97,7 @@ export default function Testimonials() {
               </motion.h2>
 
               <motion.p 
-                className="text-lg text-gray-600 mt-6 max-w-2xl"
+                className="text-sm sm:text-base md:text-lg text-gray-600 mt-6 max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

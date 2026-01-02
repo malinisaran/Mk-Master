@@ -31,7 +31,7 @@ interface AboutSectionProps {
 export default function AboutSection({ showLearnMore = true, animateOnMount = false }: AboutSectionProps) {
   return (
     <section id="about" className="py-6 sm:py-8 md:py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
+      <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column */}
           <motion.div
@@ -45,10 +45,10 @@ export default function AboutSection({ showLearnMore = true, animateOnMount = fa
           >
             <div>
               <div className="text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4" style={{ color: '#04BDF1' }}>ABOUT US</div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 leading-tight">
                 Your Trusted Partner In <span style={{ color: '#04BDF1' }}>Digital Transformation</span>
               </h3>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                   Discover the insights you need to make confident decisions. From setup to support, we've simplified the answers for you.              </p>
             </div>
 
@@ -62,7 +62,7 @@ export default function AboutSection({ showLearnMore = true, animateOnMount = fa
                   </div>
                   <div className="flex-1">
                     <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-1 sm:mb-1.5">{feature.title}</h4>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{feature.description}</p>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}

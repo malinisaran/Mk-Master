@@ -60,7 +60,7 @@ export default function ContactPage() {
       </div>
       
       <section className="py-8 sm:py-10 md:py-14 lg:py-16 xl:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+        <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Contact Information - Left Side */}
             <motion.div
@@ -70,7 +70,7 @@ export default function ContactPage() {
               className="space-y-4 sm:space-y-6"
             >
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#04BDF1] mb-3 sm:mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#04BDF1] mb-3 sm:mb-4">
                   Contact Information
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8">

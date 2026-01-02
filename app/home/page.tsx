@@ -66,7 +66,7 @@ export default function HomePage() {
                     className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6"
                   >
                     <h2 
-                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight px-2"
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight px-2"
                     >
                       {currentSlide === 0 ? (
                         <>
@@ -87,7 +87,7 @@ export default function HomePage() {
                       className="h-0.5 sm:h-1 w-12 sm:w-16 md:w-20 bg-[#04BDF1] mx-auto"
                     />
 
-                    <p className="max-w-2xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed mx-auto px-2 sm:px-4">
+                    <p className="max-w-2xl text-sm sm:text-base md:text-lg text-white leading-relaxed mx-auto px-2 sm:px-4">
                       {bannerContents[currentSlide].description}
                     </p>
                   </motion.div>

@@ -2,124 +2,162 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaArrowUp } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Career', path: '/career' },
+    { name: 'Contact Us', path: '/contact' }
+  ];
+
+  const services = [
+    'Web Development',
+    'Mobile App Development',
+    'Web Application Development',
+    'E-Commerce Solutions',
+    'UI/UX Design',
+    'Digital Marketing'
+  ];
+
+  const socialLinks = [
+    { icon: FaFacebook, href: '#', label: 'Facebook' },
+    { icon: FaInstagram, href: '#', label: 'Instagram' },
+    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+  ];
+
   return (
-    <footer className="bg-white text-gray-900 py-6 sm:py-8 md:py-10 w-full">
-
-      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
-
-        {/* 4 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-
-          {/* Logo */}
-          <div className="flex justify-start">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative">
-              <Image 
-                src="/logos/CompanyLogo.png"
-                alt="MANOKAR KANNAN DYNAMIC TECHNOLOGY"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="text-left">
-            <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 uppercase">Quick Links</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
-              {[
-                { name: 'Home', path: '/' },
-                { name: 'About Us', path: '/about' },
-                { name: 'Services', path: '/services' },
-                { name: 'Career', path: '/career' },
-                { name: 'Contact', path: '/contact' }
-              ].map((item) => (
-                <li key={item.name} className="flex items-center justify-start">
-                  <FaArrowRight className="text-red-500 mr-2 text-xs sm:text-sm" />
-                  <Link 
-                    href={item.path}
-                    className="text-sm sm:text-base text-gray-600 hover:text-red-500 cursor-pointer transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="text-left">
-            <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 uppercase">Contact Us</h3>
-            <ul className="space-y-2 sm:space-y-2.5">
-
-              <li className="flex items-start justify-start">
-                <FaMapMarkerAlt className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-600 text-left">
-                  426, 2nd floor, Bangalore main road,<br/>
-                  Athiyandhal village,<br/>
-                  Thiruvannamalai.
-                </span>
-              </li>
-
-              <li className="flex items-start justify-start">
-                <FaPhone className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <div className="flex flex-col space-y-0.5 items-start">
-                  <a href="tel:+918903742055" className="text-sm sm:text-base text-gray-600 hover:text-red-500 transition-colors">+91 8903742055</a>
-                  <a href="tel:+919486501302" className="text-sm sm:text-base text-gray-600 hover:text-red-500 transition-colors">+91 9486501302</a>
+    <>
+      <footer className="bg-gray-900 text-white w-full relative">
+        <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 py-8 sm:py-10 md:py-12">
+          {/* 4 Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+            {/* Company Information */}
+            <div className="text-left">
+              <div className="flex items-center mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative mr-3">
+                  <Image 
+                    src="/logos/CompanyLogo.png"
+                    alt="MANOKAR KANNAN DYNAMIC TECHNOLOGY"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-              </li>
-
-              <li className="flex items-start justify-start">
-                <FaEnvelope className="text-red-500 mt-0.5 mr-2 text-xs sm:text-sm flex-shrink-0" />
-                <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-gray-600 hover:text-red-500 break-words transition-colors text-left">
-                  info@manokarkannandynamictechnology.com
-                </a>
-              </li>
-
-            </ul>
-          </div>
-
-          {/* Location */}
-          <div className="text-left">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 sm:mb-3 gap-2 sm:gap-0">
-              <h3 className="text-base sm:text-lg font-bold uppercase">Our Location</h3>
-              <a className="text-xs sm:text-sm text-blue-600 hover:underline cursor-pointer transition-colors">View larger map</a>
+                <span className="text-white font-semibold text-sm sm:text-base md:text-lg">MANOKAR KANNAN DYNAMIC TECHNOLOGY</span>
+              </div>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                We are a customer-focused web development company, delivering innovative and tailored solutions with integrity and collaboration at our core. Our expertise and dedication ensure exceptional results that meet our clients' needs and exceed their expectations.
+              </p>
             </div>
 
-            <div className="relative h-24 sm:h-32 md:h-40 lg:h-48 rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.01629331549!2d79.1559743153446!3d12.901206290900644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0x3ef1c5d1c2665e49!2sBangalore%20Main%20Rd%2C%20Athiyandhal%2C%20Tamil%20Nadu%20606704!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                className="absolute inset-0 w-full h-full"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-              ></iframe>
+            {/* Quick Links */}
+            <div className="text-left">
+              <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 uppercase">Quick Links</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                {quickLinks.map((item) => (
+                  <li key={item.name}>
+                    <Link 
+                      href={item.path}
+                      className="text-sm sm:text-base text-white hover:text-[#F6D516] cursor-pointer transition-colors flex items-center"
+                    >
+                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div className="text-left">
+              <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 uppercase">Services</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                {services.map((service) => (
+                  <li key={service}>
+                    <span className="text-sm sm:text-base text-white flex items-center">
+                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
+                      {service}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="text-left">
+              <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 uppercase">Contact Info</h3>
+              <ul className="space-y-3 sm:space-y-4">
+                <li className="flex items-start">
+                  <FaMapMarkerAlt className="text-[#F6D516] mt-1 mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-white">
+                    426, 2nd floor, Bangalore main road,<br/>
+                    Athiyandhal village,<br/>
+                    Thiruvannamalai.
+                  </span>
+                </li>
+
+                <li className="flex items-center">
+                  <FaEnvelope className="text-[#F6D516] mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-white hover:text-[#F6D516] break-words transition-colors">
+                    info@manokarkannandynamictechnology.com
+                  </a>
+                </li>
+
+                <li className="flex items-center">
+                  <FaPhone className="text-[#F6D516] mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <a href="tel:+918903742055" className="text-sm sm:text-base text-white hover:text-[#F6D516] transition-colors">
+                    +91 8903742055
+                  </a>
+                </li>
+
+                {/* Social Media Icons */}
+                <li>
+                  <div className="flex items-center gap-2 sm:gap-3 mt-4">
+                    {socialLinks.map((social, index) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={index}
+                          href={social.href}
+                          aria-label={social.label}
+                          className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F6D516] rounded flex items-center justify-center hover:bg-[#F6D516]/80 transition-colors cursor-pointer"
+                        >
+                          <Icon className="text-gray-900 text-sm sm:text-base" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-200 mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 relative">
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2 px-2">
-            <p className="text-xs sm:text-sm text-gray-500 text-left leading-relaxed">
-              © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved.<span className="block sm:inline"> Developed by ABG</span>
-            </p>
-
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer"
-            >
-              <FaArrowUp className="text-sm sm:text-base" />
-            </button>
+        {/* Bottom Footer Bar - Orange Background */}
+        <div className="bg-[#F6D516] py-3 sm:py-4">
+          <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
+            <div className="flex justify-center items-center">
+              <p className="text-sm sm:text-base text-gray-900 font-medium text-center">
+                © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
+      </footer>
 
-      </div>
-    </footer>
+      {/* Floating Scroll to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#04BDF1] hover:bg-[#03a8d8] rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer"
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp className="text-white text-xl sm:text-2xl" />
+      </button>
+    </>
   );
 }

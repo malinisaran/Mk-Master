@@ -19,10 +19,10 @@ export default function CallToAction() {
         />
       </div>
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
+      <div className="relative max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14">
         <div className="text-center">
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -32,7 +32,7 @@ export default function CallToAction() {
           </motion.h2>
           
           <motion.p 
-            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90 px-2"
+            className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90 px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
