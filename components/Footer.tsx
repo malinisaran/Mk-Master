@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
 
 export default function Footer() {
@@ -31,12 +32,21 @@ export default function Footer() {
           <div className="text-left">
             <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 uppercase">Quick Links</h3>
             <ul className="space-y-1.5 sm:space-y-2">
-              {['Home','About Us','Services','Career','Contact'].map((item) => (
-                <li key={item} className="flex items-center justify-start">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Services', path: '/services' },
+                { name: 'Career', path: '/career' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <li key={item.name} className="flex items-center justify-start">
                   <FaArrowRight className="text-red-500 mr-2 text-xs sm:text-sm" />
-                  <span className="text-sm sm:text-base text-gray-600 hover:text-red-500 cursor-pointer transition-colors">
-                    {item}
-                  </span>
+                  <Link 
+                    href={item.path}
+                    className="text-sm sm:text-base text-gray-600 hover:text-red-500 cursor-pointer transition-colors"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
