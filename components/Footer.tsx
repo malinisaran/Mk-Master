@@ -65,7 +65,7 @@ export default function Footer() {
                       href={item.path}
                       className="text-sm sm:text-base text-white hover:text-[#04BDF1] cursor-pointer transition-colors flex items-center"
                     >
-                      <span className="mr-2 text-[#04BDF1]">&gt;&gt;</span>
+                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
                       {item.name}
                     </Link>
                   </li>
@@ -80,7 +80,7 @@ export default function Footer() {
                 {services.map((service) => (
                   <li key={service}>
                     <span className="text-sm sm:text-base text-white flex items-center">
-                      <span className="mr-2 text-[#04BDF1]">&gt;&gt;</span>
+                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
                       {service}
                     </span>
                   </li>
