@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import Image from 'next/image';
 
 type FAQItem = {
@@ -122,20 +122,20 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleQuestion(index)}
-                  className="w-full px-4 sm:px-5 md:px-6 py-4 sm:py-5 flex items-center justify-between text-left bg-gray-800 hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
+                  className="w-full px-4 sm:px-5 md:px-6 py-4 sm:py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer border border-gray-200"
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${item.id}`}
                 >
-                  <span className="text-sm sm:text-base md:text-lg font-medium text-white pr-4 flex-1">
+                  <span className="text-sm sm:text-base md:text-lg font-medium text-gray-900 pr-4 flex-1">
                     {item.question}
                   </span>
-                  <motion.div
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
-                  >
-                    <ChevronDown className="w-5 h-5 text-white" />
-                  </motion.div>
+                  <div className="flex-shrink-0">
+                    {openIndex === index ? (
+                      <Minus className="w-5 h-5 text-red-600" />
+                    ) : (
+                      <Plus className="w-5 h-5 text-red-600" />
+                    )}
+                  </div>
                 </button>
 
                 <AnimatePresence>
