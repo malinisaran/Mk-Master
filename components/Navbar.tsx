@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEnquiryModal } from "@/contexts/EnquiryModalContext";
-import { FaPhone, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "react-icons/fa";
+import { FaPhone, FaFacebook, FaInstagram, FaLinkedin, FaGlobe, FaWhatsapp } from "react-icons/fa";
 
 type NavItem = {
   name: string;
@@ -38,7 +38,8 @@ export default function Navbar() {
   const socialLinks = [
     { icon: FaFacebook, href: '#', label: 'Facebook' },
     { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' }
+    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaWhatsapp, href: '#', label: 'WhatsApp' }
   ];
 
   useEffect(() => {
@@ -134,7 +135,7 @@ export default function Navbar() {
               className="w-10 h-10 bg-[#04BDF1] hover:bg-[#03a8d8] text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               aria-label="Social Media"
             >
-              <FaShareAlt className="text-sm" />
+              <FaGlobe className="text-sm" />
             </button>
             
             {/* Social Media Popup */}

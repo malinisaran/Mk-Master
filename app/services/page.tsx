@@ -265,12 +265,21 @@ export default function ServicesPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <div 
-                className={`bg-white rounded-2xl shadow-2xl ${showEnquiryForm ? 'max-w-6xl' : 'max-w-2xl'} w-full overflow-hidden flex flex-col transition-all duration-300 ease-out ${
+                className={`relative bg-white rounded-2xl shadow-2xl ${showEnquiryForm ? 'max-w-6xl' : 'max-w-2xl'} w-full overflow-hidden flex flex-col transition-all duration-300 ease-out ${
                   showEnquiryForm 
                     ? 'h-[95vh] sm:h-[90vh] md:h-[85vh]' 
                     : 'max-h-[90vh] sm:max-h-[85vh]'
                 }`}
               >
+                {/* Close Button - Top Right Corner */}
+                <button
+                  onClick={closeModal}
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 w-10 h-10 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center transition-colors duration-200 cursor-pointer shadow-lg border border-gray-200"
+                  aria-label="Close modal"
+                >
+                  <X className="w-5 h-5 text-gray-700" />
+                </button>
+
                 {/* Modal Header */}
                 <div className="relative p-4 sm:p-6 border-b border-gray-200 flex-shrink-0">
                   {/* Background Image or Color for Header */}
@@ -291,7 +300,7 @@ export default function ServicesPage() {
                     ></div>
                   )}
                   
-                  <div className="relative z-10 flex items-start justify-between">
+                  <div className="relative z-10 flex items-center justify-center">
                     <div className="flex items-center space-x-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center border-2 shadow-md" style={{ borderColor: '#04BDF1' }}>
                         <div style={{ color: '#04BDF1' }}>
@@ -299,17 +308,11 @@ export default function ServicesPage() {
                         </div>
                       </div>
                       <div>
-                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 text-center">
                           {selectedService.title}
                         </h2>
                       </div>
                     </div>
-                    <button
-                      onClick={closeModal}
-                      className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200 cursor-pointer"
-                    >
-                      <X className="w-5 h-5 text-gray-600" />
-                    </button>
                   </div>
                 </div>
 
@@ -317,8 +320,8 @@ export default function ServicesPage() {
                 {showEnquiryForm ? (
                   <div className={`flex-1 overflow-hidden flex flex-col ${showEnquiryForm ? 'md:flex-row' : ''} min-h-0`}>
                     {/* Left Side - Content */}
-                    <div className="flex-1 p-4 sm:p-6 overflow-y-auto border-r-0 md:border-r border-gray-200 min-h-0">
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                    <div className="flex-1 p-4 sm:p-6 overflow-y-auto border-r-0 md:border-r border-gray-200 min-h-0 flex items-center justify-center">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed text-center">
                         {selectedService.details}
                       </p>
                     </div>
@@ -344,8 +347,8 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 ) : (
-                  <div className="p-6 sm:p-8 overflow-y-auto">
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+                  <div className="p-6 sm:p-8 overflow-y-auto flex flex-col items-center justify-center text-center">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6 text-center">
                       {selectedService.details}
                     </p>
                     

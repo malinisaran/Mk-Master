@@ -63,9 +63,9 @@ export default function Footer() {
                   <li key={item.name}>
                     <Link 
                       href={item.path}
-                      className="text-sm sm:text-base text-white hover:text-[#F6D516] cursor-pointer transition-colors flex items-center"
+                      className="text-sm sm:text-base text-white hover:text-[#04BDF1] cursor-pointer transition-colors flex items-center"
                     >
-                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
+                      <span className="mr-2 text-[#04BDF1]">&gt;&gt;</span>
                       {item.name}
                     </Link>
                   </li>
@@ -80,7 +80,7 @@ export default function Footer() {
                 {services.map((service) => (
                   <li key={service}>
                     <span className="text-sm sm:text-base text-white flex items-center">
-                      <span className="mr-2 text-[#F6D516]">&gt;&gt;</span>
+                      <span className="mr-2 text-[#04BDF1]">&gt;&gt;</span>
                       {service}
                     </span>
                   </li>
@@ -93,7 +93,7 @@ export default function Footer() {
               <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 uppercase">Contact Info</h3>
               <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start">
-                  <FaMapMarkerAlt className="text-[#F6D516] mt-1 mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <FaMapMarkerAlt className="text-[#04BDF1] mt-1 mr-3 text-sm sm:text-base flex-shrink-0" />
                   <span className="text-sm sm:text-base text-white">
                     426, 2nd floor, Bangalore main road,<br/>
                     Athiyandhal village,<br/>
@@ -102,15 +102,15 @@ export default function Footer() {
                 </li>
 
                 <li className="flex items-center">
-                  <FaEnvelope className="text-[#F6D516] mr-3 text-sm sm:text-base flex-shrink-0" />
-                  <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-white hover:text-[#F6D516] break-words transition-colors">
+                  <FaEnvelope className="text-[#04BDF1] mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <a href="mailto:info@manokarkannandynamictechnology.com" className="text-sm sm:text-base text-white hover:text-[#04BDF1] break-words transition-colors">
                     info@manokarkannandynamictechnology.com
                   </a>
                 </li>
 
                 <li className="flex items-center">
-                  <FaPhone className="text-[#F6D516] mr-3 text-sm sm:text-base flex-shrink-0" />
-                  <a href="tel:+918903742055" className="text-sm sm:text-base text-white hover:text-[#F6D516] transition-colors">
+                  <FaPhone className="text-[#04BDF1] mr-3 text-sm sm:text-base flex-shrink-0" />
+                  <a href="tel:+918903742055" className="text-sm sm:text-base text-white hover:text-[#04BDF1] transition-colors">
                     +91 8903742055
                   </a>
                 </li>
@@ -125,9 +125,9 @@ export default function Footer() {
                           key={index}
                           href={social.href}
                           aria-label={social.label}
-                          className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F6D516] rounded flex items-center justify-center hover:bg-[#F6D516]/80 transition-colors cursor-pointer"
+                          className="w-8 h-8 sm:w-10 sm:h-10 bg-[#04BDF1] rounded flex items-center justify-center hover:bg-[#03a8d8] transition-colors cursor-pointer"
                         >
-                          <Icon className="text-gray-900 text-sm sm:text-base" />
+                          <Icon className="text-white text-sm sm:text-base" />
                         </a>
                       );
                     })}
@@ -138,11 +138,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Footer Bar - Orange Background */}
-        <div className="bg-[#F6D516] py-3 sm:py-4">
+        {/* Bottom Footer Bar - Blue Background */}
+        <div className="bg-[#04BDF1] py-3 sm:py-4">
           <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
             <div className="flex justify-center items-center">
-              <p className="text-sm sm:text-base text-gray-900 font-medium text-center">
+              <p className="text-sm sm:text-base text-white font-medium text-center">
                 © {currentYear} MANOKAR KANNAN DYNAMIC TECHNOLOGY. All rights reserved.
               </p>
             </div>
@@ -153,10 +153,10 @@ export default function Footer() {
       {/* Floating Scroll to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#04BDF1] hover:bg-[#03a8d8] rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#F6D516] hover:bg-[#F6D516]/80 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer"
         aria-label="Scroll to top"
       >
-        <FaArrowUp className="text-white text-xl sm:text-2xl" />
+        <FaArrowUp className="text-gray-900 text-xl sm:text-2xl" />
       </button>
     </>
   );
