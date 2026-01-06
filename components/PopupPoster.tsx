@@ -51,7 +51,7 @@ export default function PopupPoster() {
               {/* Image */}
               <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/popupposter.jpg"
+                  src="/popupposter.png"
                   alt="Exclusive Offer - Website Development"
                   width={1200}
                   height={1600}
